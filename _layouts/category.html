@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="category-page">
+  <h1>📚 {{ page.cat }}</h1>
+  <div class="posts-grid">
+    {% assign category_posts = site.categories[page.cat] %}
+    {% for post in category_posts %}
+      <div class="post-card">
+        {% if post.featured_image %}
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
+        {% endif %}
+        <div class="card-content">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-date">{{ post.date | date: "%b %d, %Y" }}</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          <a href="{{ post.url | relative_url }}" class="btn-sm">Read more →</a>
+        </div>
+      </div>
+    {% else %}
+      <p>No posts in this category yet. Check back soon!</p>
+    {% endfor %}
+  </div>
+</section>
