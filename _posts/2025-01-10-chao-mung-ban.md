@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chào mừng bạn đến với Learning English with Ms. Thuy"
+title: "Chào mừng bạn"
 date: 2025-04-20
 categories: General
 tags: [welcome, introduction, motivation]
