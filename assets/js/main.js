@@ -1,18 +1,20 @@
-// Mobile menu toggle (simple)
 document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
   const toggleBtn = document.querySelector('.mobile-toggle');
   const navUl = document.querySelector('.main-nav ul');
-  if(toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
+  
+  if (toggleBtn && navUl) {
+    toggleBtn.addEventListener('click', function(e) {
+      e.preventDefault();
       navUl.classList.toggle('show');
     });
   }
 
-  // Scroll reveal animation
+  // Scroll reveal animation (giữ lại nếu có)
   const fadeElements = document.querySelectorAll('.fade-up');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
+      if (entry.isIntersecting) {
         entry.target.classList.add('revealed');
         observer.unobserve(entry.target);
       }
