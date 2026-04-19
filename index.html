@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{% include hero.html %}
+
+<!-- Featured Categories Section -->
+<section id="featured-categories" class="categories-section fade-up">
+  <div class="container">
+    <h2>Explore Topics</h2>
+    <div class="categories-grid">
+      {% assign categories = "Vocabulary,Grammar,Listening,Reading,Writing,Speaking" | split: "," %}
+      {% for cat in categories %}
+      <a href="{{ cat | downcase }}.html" class="category-card">
+        <i class="fas {% case cat %}
+          {% when 'Vocabulary' %}fa-book-open
+          {% when 'Grammar' %}fa-spell-check
+          {% when 'Listening' %}fa-headphones
+          {% when 'Reading' %}fa-eye
+          {% when 'Writing' %}fa-pen-fancy
+          {% when 'Speaking' %}fa-comments
+        {% endcase %}"></i>
+        <h3>{{ cat }}</h3>
+        <p>Improve your {{ cat | downcase }} skills with easy lessons.</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts Preview -->
+<section id="latest-posts" class="latest-section fade-up">
+  <div class="container">
+    <h2>Latest from the Blog</h2>
+    <div class="posts-grid">
+      {% assign latest_posts = site.posts | limit: 3 %}
+      {% for post in latest_posts %}
+      <div class="post-card">
+        {% if post.featured_image %}
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}">
+        {% endif %}
+        <div class="card-content">
+          <span class="post-category">{{ post.categories | first }}</span>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+          <a href="{{ post.url | relative_url }}" class="btn-sm">Read more →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="view-all">
+      <a href="#featured-categories" class="btn-outline">View All Categories <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
