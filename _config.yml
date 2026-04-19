@@ -1,19 +1,17 @@
 # Site settings
 title: "Learning English with Ms. Thuy"
 description: "Fun and effective English lessons for everyone"
-baseurl: ""   # Leave empty for root deployment
-url: "https://yourusername.github.io"  # Replace with your GitHub Pages URL
+baseurl: "/learn-with-ms-thuy"   # ✅ QUAN TRỌNG: đúng tên repo
+url: "https://ms-thuy-classes.github.io"
 
 # Build settings
 markdown: kramdown
 permalink: /:categories/:title/
 
-# Plugins (GitHub Pages supports these)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Exclude files from build
 exclude:
   - .gitignore
   - Gemfile
