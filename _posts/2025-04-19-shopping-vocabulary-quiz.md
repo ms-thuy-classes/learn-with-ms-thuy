@@ -4,7 +4,7 @@ title: "Shopping Vocabulary Quiz - Ôn tập từ vựng chủ đề Mua sắm"
 date: 2025-04-19
 categories: Vocabulary
 tags: [quiz, shopping, vocabulary, interactive]
-featured_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqBt4t0dnQtXgj6kq_NIQyhs4QNhY3QYUO-g&s"
+featured_image: "https://img.freepik.com/free-vector/hand-drawn-english-book-background_23-2149483336.jpg?semt=ais_hybrid&w=740&q=80"
 excerpt: "Kiểm tra vốn từ vựng tiếng Anh về chủ đề Shopping với bài quiz tương tác. Có âm thanh, hiệu ứng và tổng kết điểm."
 ---
 
