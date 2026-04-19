@@ -10,7 +10,8 @@ layout: default
     <div class="categories-grid">
       {% assign categories = "Vocabulary,Grammar,Listening,Reading,Writing,Speaking" | split: "," %}
       {% for cat in categories %}
-      <a href="{{ cat | downcase }}.html" class="category-card">
+      {% assign cat_slug = cat | downcase %}
+      <a href="{{ '/' | relative_url }}{{ cat_slug }}/" class="category-card">
         <i class="fas {% case cat %}
           {% when 'Vocabulary' %}fa-book-open
           {% when 'Grammar' %}fa-spell-check
@@ -20,7 +21,7 @@ layout: default
           {% when 'Speaking' %}fa-comments
         {% endcase %}"></i>
         <h3>{{ cat }}</h3>
-        <p>Improve your {{ cat | downcase }} skills with easy lessons.</p>
+        <p>Improve your {{ cat_slug }} skills with easy lessons.</p>
       </a>
       {% endfor %}
     </div>
