@@ -1,0 +1,33 @@
+---
+layout: default
+title: Speaking - Ms. Thuy
+cat: Speaking
+permalink: /speaking/
+---
+
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem;">
+  <h1>🗣️ Speaking</h1>
+  <p style="font-size: 1.2rem; color: #5a5a6e;">Tự tin giao tiếp tiếng Anh với các bài học về phát âm, hội thoại và phản xạ nhanh.</p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    {% assign speaking_posts = site.categories["Speaking"] %}
+    {% if speaking_posts.size > 0 %}
+      {% for post in speaking_posts %}
+        <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.2s;">
+          {% if post.featured_image %}
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}" style="width: 100%; height: 180px; object-fit: cover;">
+          {% endif %}
+          <div style="padding: 1.2rem;">
+            <span style="font-size: 0.75rem; color: #f5576c; text-transform: uppercase;">{{ post.categories | first }}</span>
+            <h3 style="margin: 0.5rem 0;"><a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #1e1e2a;">{{ post.title }}</a></h3>
+            <p style="color: #666; font-size: 0.85rem;">{{ post.date | date: "%b %d, %Y" }}</p>
+            <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            <a href="{{ post.url | relative_url }}" style="display: inline-block; margin-top: 0.5rem; background: linear-gradient(135deg, #a18cd1, #fbc2eb); color: white; padding: 0.4rem 1rem; border-radius: 50px; text-decoration: none;">Đọc tiếp →</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>⚠️ Chưa có bài viết nào trong danh mục Speaking. Hãy thêm bài viết với <strong>categories: Speaking</strong> (chữ S hoa).</p>
+    {% endif %}
+  </div>
+</div>
