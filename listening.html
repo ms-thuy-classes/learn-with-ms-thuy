@@ -1,5 +1,39 @@
 ---
-layout: category
-title: "Listening Lessons"
+layout: default
+title: "Listening - Learning English with Ms. Thuy"
 cat: "Listening"
 ---
+
+<section class="category-page">
+  <div class="container category-container">
+    <h1>🎧 Listening</h1>
+    <p class="category-description">Luyện kỹ năng nghe qua các bài tập có audio, transcript và mẹo học hiệu quả.</p>
+
+    <div class="posts-grid">
+      {% assign category_posts = site.categories["Listening"] %}
+      {% if category_posts.size > 0 %}
+        {% for post in category_posts %}
+          <div class="post-card">
+            {% if post.featured_image %}
+              <img src="{{ post.featured_image }}" alt="{{ post.title }}">
+            {% else %}
+              <img src="{{ '/assets/images/default.jpg' | relative_url }}" alt="Default image">
+            {% endif %}
+            <div class="card-content">
+              <span class="post-category">{{ post.categories | first }}</span>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <p class="post-date">{{ post.date | date: "%b %d, %Y" }}</p>
+              <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+              <a href="{{ post.url | relative_url }}" class="btn-sm">Read more →</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="no-posts">
+          <p>⚠️ Hiện chưa có bài viết nào trong danh mục Listening. Hãy quay lại sau nhé!</p>
+          <a href="{{ '/' | relative_url }}" class="btn-primary">Về trang chủ</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
