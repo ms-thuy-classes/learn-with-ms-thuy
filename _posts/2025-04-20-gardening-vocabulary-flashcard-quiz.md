@@ -132,7 +132,7 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     font-weight: 500;
     margin-top: 10px;
   }
-  /* ========== VOCABULARY TABLE ========== */
+    /* ========== VOCABULARY TABLE ========== */
   .table-wrapper {
     overflow-x: auto;
   }
@@ -143,32 +143,45 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.85rem;  /* giảm cỡ chữ để bảng gọn hơn */
   }
   .vocab-table th, .vocab-table td {
-    padding: 12px 8px;
+    padding: 10px 8px;
     text-align: left;
-    border-bottom: 1px solid #f0e6ff;
+    border: 1px solid #e6d9f0;  /* đường kẻ dọc + ngang giữa các ô */
     vertical-align: middle;
   }
   .vocab-table th {
     background: #f9f0ff;
     color: #5a3e7c;
     font-weight: 600;
+    border-bottom: 2px solid #d9c8f0;
+  }
+  /* Cột sao căn giữa */
+  .vocab-table td:last-child, .vocab-table th:last-child {
+    text-align: center;
+    width: 60px;
   }
   .star-btn {
     background: none;
+    border: none;
     font-size: 1.3rem;
+    cursor: pointer;
     padding: 0;
     width: 32px;
-    color: #ffc107;
+    transition: transform 0.1s;
+  }
+  .star-btn:hover {
+    transform: scale(1.1);
   }
   .star-btn.active {
     color: #f5576c;
   }
-  .filter-group {
-    margin: 1rem 0;
-    display: flex;
-    gap: 12px;
+  /* Nút audio trong bảng nhỏ gọn */
+  .vocab-table button {
+    background: #f0eaff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
   }
   /* ========== QUIZ ========== */
   .quiz-section {
@@ -393,25 +406,24 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
       starBtn.innerText = favorites[idx] ? '⭐' : '☆';
       starBtn.classList.add('star-btn');
       if (favorites[idx]) starBtn.classList.add('active');
-      starBtn.onclick = () => {
-        favorites[idx] = !favorites[idx];
-        localStorage.setItem('gardeningFavs', JSON.stringify(favorites));
-        renderTable(document.querySelector('.filter-btn.active')?.innerText === '⭐ Starred only' ? 'starred' : 'all');
-      };
-      starCell.appendChild(starBtn);
-    });
+    starBtn.onclick = () => {
+  favorites[idx] = !favorites[idx];
+  localStorage.setItem('gardeningFavs', JSON.stringify(favorites));
+  starBtn.innerText = favorites[idx] ? '⭐' : '☆';
+  if (favorites[idx]) {
+    starBtn.classList.add('active');
+  } else {
+    starBtn.classList.remove('active');
   }
-  document.getElementById('filterAllBtn').addEventListener('click', () => {
-    document.getElementById('filterAllBtn').classList.add('active');
-    document.getElementById('filterStarBtn').classList.remove('active');
-    renderTable('all');
-  });
-  document.getElementById('filterStarBtn').addEventListener('click', () => {
-    document.getElementById('filterStarBtn').classList.add('active');
-    document.getElementById('filterAllBtn').classList.remove('active');
-    renderTable('starred');
-  });
-  renderTable('all');
+  // Nếu đang ở chế độ lọc "starred only" và vừa bỏ sao -> cần xóa dòng này khỏi bảng
+  const currentFilter = document.querySelector('.filter-btn.active')?.innerText === '⭐ Starred only' ? 'starred' : 'all';
+  if (currentFilter === 'starred' && !favorites[idx]) {
+    // Xóa dòng
+    row.remove();
+  } else if (currentFilter === 'all') {
+    // Không cần làm gì thêm
+  }
+};
 
   // --------------------------------------------------------------
   // 3. QUIZ GENERATOR (mix 3 types)

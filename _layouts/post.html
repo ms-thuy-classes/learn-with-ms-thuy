@@ -10,12 +10,14 @@ layout: default
 {% endif %}
 <style>
   .post-wrapper {
-    max-width: 820px;
+    max-width: 1200px;   /* Tăng từ 820px lên 1200px để nội dung rộng hơn */
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: 2rem 2rem;  /* Tăng padding ngang 1 chút cho thoáng, nhưng vẫn rộng hơn trước */
   }
   @media (max-width: 768px) {
-    .post-wrapper { padding: 1.5rem 1.2rem; }
+    .post-wrapper { 
+      padding: 1.5rem 1.2rem; 
+    }
   }
   .post-wrapper img {
     max-width: 100%;
@@ -57,6 +59,7 @@ layout: default
   .post-content table {
     display: block;
     overflow-x: auto;
+    width: 100%;
   }
 </style>
 
