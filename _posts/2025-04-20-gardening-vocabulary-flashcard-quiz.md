@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "🌱 Gardening Vocabulary: Flashcards, Table & Quiz"
-date: 2025-04-20
+date: 2026-04-20
 categories: Vocabulary
 tags: [gardening, flashcards, quiz, interactive]
 featured_image: "https://images.pexels.com/photos/1264247/pexels-photo-1264247.jpeg?auto=compress&cs=tinysrgb&w=800"
-excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table, and a mixed‑type quiz. Includes audio, favourites, and progress tracking."
+excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table, and a mixed‑type quiz."
 ---
 
 <style>
@@ -24,7 +24,6 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     border-radius: 20px;
     margin: 1.5rem 0 1rem;
   }
-  /* Cards & buttons */
   .pastel-card {
     background: rgba(255,255,255,0.85);
     backdrop-filter: blur(4px);
@@ -32,10 +31,6 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     box-shadow: 0 12px 28px rgba(0,0,0,0.05);
     padding: 1.2rem;
     transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .pastel-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.08);
   }
   button, .filter-btn {
     background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
@@ -46,12 +41,12 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     cursor: pointer;
     transition: all 0.2s;
     color: #5a3e7c;
+    margin: 5px;
   }
-  button:hover {
+  button:hover, .filter-btn.active {
     background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     color: white;
     transform: scale(1.02);
-    box-shadow: 0 4px 10px rgba(161,140,209,0.3);
   }
   /* ========== FLASHCARD 3D ========== */
   .flashcard-area {
@@ -92,50 +87,20 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     justify-content: center;
     background: white;
   }
-  .flip-card-front {
-    background: linear-gradient(145deg, #ffffff, #fef5f7);
-  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fef5f7); }
   .flip-card-back {
     background: linear-gradient(145deg, #f0f7ff, #ffffff);
     transform: rotateY(180deg);
     overflow-y: auto;
   }
-  .flash-word {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .flash-ipa {
-    font-family: monospace;
-    color: #888;
-  }
-  .flash-meaning {
-    font-size: 1.5rem;
-    color: #f5576c;
-    margin-bottom: 1rem;
-  }
-  .flash-example {
-    font-size: 1rem;
-    line-height: 1.4;
-    background: #f9f3ff;
-    padding: 0.8rem;
-    border-radius: 20px;
-  }
-  .card-controls {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-  }
-  .progress-bar {
-    text-align: center;
-    font-weight: 500;
-    margin-top: 10px;
-  }
-    /* ========== VOCABULARY TABLE ========== */
-  .table-wrapper {
-    overflow-x: auto;
-  }
+  .flash-word { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .flash-ipa { font-family: monospace; color: #888; }
+  .flash-meaning { font-size: 1.5rem; color: #f5576c; margin-bottom: 1rem; }
+  .flash-example { font-size: 1rem; line-height: 1.4; background: #f9f3ff; padding: 0.8rem; border-radius: 20px; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
   .vocab-table {
     width: 100%;
     border-collapse: collapse;
@@ -143,111 +108,29 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    font-size: 0.85rem;  /* giảm cỡ chữ để bảng gọn hơn */
+    font-size: 0.85rem;
   }
   .vocab-table th, .vocab-table td {
-    padding: 10px 8px;
+    padding: 12px 10px;
     text-align: left;
-    border: 1px solid #e6d9f0;  /* đường kẻ dọc + ngang giữa các ô */
-    vertical-align: middle;
+    border: 1px solid #e6d9f0;
   }
-  .vocab-table th {
-    background: #f9f0ff;
-    color: #5a3e7c;
-    font-weight: 600;
-    border-bottom: 2px solid #d9c8f0;
-  }
-  /* Cột sao căn giữa */
-  .vocab-table td:last-child, .vocab-table th:last-child {
-    text-align: center;
-    width: 60px;
-  }
-  .star-btn {
-    background: none;
-    border: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-    padding: 0;
-    width: 32px;
-    transition: transform 0.1s;
-  }
-  .star-btn:hover {
-    transform: scale(1.1);
-  }
-  .star-btn.active {
-    color: #f5576c;
-  }
-  /* Nút audio trong bảng nhỏ gọn */
-  .vocab-table button {
-    background: #f0eaff;
-    padding: 4px 8px;
-    font-size: 0.75rem;
-  }
+  .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
   /* ========== QUIZ ========== */
-  .quiz-section {
-    margin-top: 2rem;
-  }
-  .quiz-options {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 12px;
-    margin: 20px 0;
-  }
-  @media (max-width: 700px) {
-    .quiz-options { grid-template-columns: 1fr; }
-  }
-  .quiz-option {
-    background: #f3f0ff;
-    padding: 12px;
-    border-radius: 60px;
-    cursor: pointer;
-    transition: 0.2s;
-    text-align: center;
-  }
-  .quiz-option:hover { background: #e0d6ff; }
-  .quiz-feedback {
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
-    animation: fadeIn 0.3s;
-  }
-  @keyframes shake {
-    0%,100%{ transform: translateX(0); }
-    25%{ transform: translateX(-5px); }
-    75%{ transform: translateX(5px); }
-  }
-  .shake {
-    animation: shake 0.3s ease;
-  }
-  .glow {
-    box-shadow: 0 0 12px #28a745;
-  }
-  .quiz-input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 60px;
-    border: 1px solid #ddd;
-    margin: 10px 0;
-  }
-  .result-screen {
-    background: white;
-    border-radius: 28px;
-    padding: 1.5rem;
-    margin-top: 1rem;
-  }
-  .wrong-list {
-    background: #fff0f0;
-    border-radius: 20px;
-    padding: 1rem;
-    margin-top: 1rem;
-  }
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
+  .correct { color: #28a745; }
+  .wrong { color: #dc3545; }
 </style>
 
 <div class="vocab-container" id="vocabApp">
   <h1>🌱 Gardening Vocabulary</h1>
-  <p>Learn 20 essential words with flashcards, table, and quiz. Click the star ⭐ to save difficult words.</p>
+  <p>Learn 20 essential words for IELTS 7.0+. Use flashcards, table, and quiz to master them.</p>
 
-  <!-- SECTION 1: FLASHCARDS -->
   <h2>📇 Flashcards</h2>
   <div class="flashcard-area">
     <div class="flip-card" id="flipCard">
@@ -255,14 +138,13 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
         <div class="flip-card-front">
           <div class="flash-word" id="flashWord"></div>
           <div class="flash-ipa" id="flashIpa"></div>
-          <button id="playFlashAudio" style="margin-top: 1rem;">🔊 Play word</button>
-          <p style="margin-top: 1rem; font-size:0.8rem;">👆 Tap card to flip</p>
+          <button id="playFlashAudio">🔊 Play word</button>
+          <p style="font-size:0.8rem; margin-top:10px;">👆 Tap to flip</p>
         </div>
         <div class="flip-card-back">
           <div class="flash-meaning" id="flashMeaning"></div>
           <div class="flash-example" id="flashExample"></div>
-          <div class="flash-example-meaning" id="flashExampleMeaning" style="font-size:0.85rem; margin-top:0.5rem;"></div>
-          <button id="playExampleAudio" style="margin-top: 1rem;">🔊 Play example</button>
+          <button id="playExampleAudio" style="margin-top:10px;">🔊 Play example</button>
         </div>
       </div>
     </div>
@@ -273,22 +155,28 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
   </div>
   <div class="progress-bar" id="flashProgress"></div>
 
-  <!-- SECTION 2: VOCABULARY TABLE -->
   <h2>📋 Vocabulary Table</h2>
   <div class="filter-group">
-    <button id="filterAllBtn" class="filter-btn">All</button>
-    <button id="filterStarBtn" class="filter-btn">⭐ Starred only</button>
+    <button id="filterAllBtn" class="filter-btn active">All Words</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
   </div>
   <div class="table-wrapper">
-    <table class="vocab-table" id="vocabTable">
+    <table class="vocab-table">
       <thead>
-        <tr><th>#</th><th>Word</th><th>IPA</th><th>Audio</th><th>Meaning</th><th>Example</th><th>Example meaning</th><th>⭐</th></tr>
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example</th>
+          <th>⭐</th>
+        </tr>
       </thead>
       <tbody id="tableBody"></tbody>
     </table>
   </div>
 
-  <!-- SECTION 3: QUIZ -->
   <h2>📝 Quiz</h2>
   <button id="startQuizBtn">🌱 Start Quiz (20 questions)</button>
   <div id="quizArea" style="display:none;">
@@ -298,332 +186,168 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
 </div>
 
 <script>
-  // --------------------------------------------------------------
-  // 1. VOCABULARY DATA (fully editable)
-  //    Add new words following the same structure.
-  //    Audio uses Web Speech API – no external files needed.
-  // --------------------------------------------------------------
   const vocabList = [
-    { word: "green thumb", ipa: "/ɡriːn θʌm/", meaning: "khiếu làm vườn", example: "My grandmother has a real green thumb; she can make almost any plant thrive.", exampleMeaning: "Bà tôi thực sự có khiếu làm vườn; bà có thể khiến hầu hết mọi loại cây phát triển tươi tốt." },
-    { word: "germinate", ipa: "/ˈdʒɜːmɪneɪt/", meaning: "nảy mầm", example: "Seeds require the right balance of moisture and warmth to germinate successfully.", exampleMeaning: "Hạt giống cần sự cân bằng đúng giữa độ ẩm và độ ấm để nảy mầm thành công." },
-    { word: "cultivate", ipa: "/ˈkʌltɪveɪt/", meaning: "trồng trọt, canh tác", example: "Many people today choose to cultivate their own vegetables to ensure they are organic.", exampleMeaning: "Nhiều người ngày nay chọn tự trồng trọt rau củ để đảm bảo chúng là thực phẩm hữu cơ." },
-    { word: "prune", ipa: "/pruːn/", meaning: "tỉa cành", example: "It is essential to prune the rose bushes in early spring to encourage new growth.", exampleMeaning: "Việc tỉa các bụi hoa hồng vào đầu xuân là rất quan trọng để kích thích sự phát triển mới." },
-    { word: "sprout up", ipa: "/spraʊt ʌp/", meaning: "mọc lên nhanh chóng", example: "After the first spring rain, tiny green shoots began to sprout up all over the garden.", exampleMeaning: "Sau cơn mưa xuân đầu tiên, những mầm xanh nhỏ bé bắt đầu mọc lên khắp vườn." },
-    { word: "nutrient-rich soil", ipa: "/ˈnjuːtriənt rɪtʃ sɔɪl/", meaning: "đất giàu dinh dưỡng", example: "Lush gardens are usually the result of planting in nutrient-rich soil.", exampleMeaning: "Những khu vườn tươi tốt thường là kết quả của việc trồng cây trên đất giàu dinh dưỡng." },
-    { word: "wither away", ipa: "/ˈwɪðər əˈweɪ/", meaning: "héo úa, tàn lụi", example: "If you neglect your indoor plants during the summer, they will quickly wither away.", exampleMeaning: "Nếu bạn bỏ bê cây trồng trong nhà suốt mùa hè, chúng sẽ nhanh chóng héo úa đi." },
-    { word: "hardy", ipa: "/ˈhɑːrdi/", meaning: "chịu đựng tốt (thời tiết khắc nghiệt)", example: "Lavender is a hardy plant that can survive even in very poor soil conditions.", exampleMeaning: "Oải hương là một loài cây chịu đựng tốt, có thể sống sót ngay cả trong điều kiện đất rất nghèo nàn." },
-    { word: "take root", ipa: "/teɪk ruːt/", meaning: "bén rễ", example: "It takes about two weeks for the cuttings to take root in the new compost.", exampleMeaning: "Mất khoảng hai tuần để các cành giâm bén rễ trong lớp phân hữu cơ mới." },
-    { word: "perennial", ipa: "/pəˈreniəl/", meaning: "cây lâu năm", example: "I prefer perennials over annuals because they bloom year after year without replanting.", exampleMeaning: "Tôi thích cây lâu năm hơn cây một năm vì chúng nở hoa năm này qua năm khác mà không cần trồng lại." },
-    { word: "pot on", ipa: "/pɒt ɒn/", meaning: "chuyển cây sang chậu lớn hơn", example: "The seedlings have grown significantly, so I need to pot them on this weekend.", exampleMeaning: "Cây con đã lớn lên đáng kể, vì vậy tôi cần chuyển chúng sang chậu lớn hơn vào cuối tuần này." },
-    { word: "in full bloom", ipa: "/ɪn fʊl bluːm/", meaning: "nở rộ", example: "The botanical garden is breathtaking when the cherry blossoms are in full bloom.", exampleMeaning: "Vườn bách thảo đẹp đến nín thở khi hoa anh đào đang nở rộ." },
-    { word: "pest control", ipa: "/pest kənˈtrəʊl/", meaning: "kiểm soát sâu bệnh", example: "Organic gardeners often use natural predators like ladybugs for pest control.", exampleMeaning: "Những người làm vườn hữu cơ thường sử dụng các loài thiên địch như bọ rùa để kiểm soát sâu bệnh." },
-    { word: "lush vegetation", ipa: "/lʌʃ ˌvedʒɪˈteɪʃn/", meaning: "thảm thực vật tươi tốt", example: "The tropical region is known for its lush vegetation and high biodiversity.", exampleMeaning: "Vùng nhiệt đới nổi tiếng với thảm thực vật tươi tốt và đa dạng sinh học cao." },
-    { word: "die back", ipa: "/daɪ bæk/", meaning: "héo đi (nhưng gốc vẫn sống)", example: "Don't worry if the lilies die back in winter; they will return in the spring.", exampleMeaning: "Đừng lo lắng nếu hoa ly héo đi vào mùa đông; chúng sẽ mọc lại vào mùa xuân." },
-    { word: "sow the seeds", ipa: "/səʊ ðə siːdz/", meaning: "gieo hạt", example: "April is the ideal month to sow the seeds for your summer vegetable patch.", exampleMeaning: "Tháng Tư là tháng lý tưởng để gieo hạt cho mảnh vườn rau mùa hè của bạn." },
-    { word: "drainage", ipa: "/ˈdreɪnɪdʒ/", meaning: "sự thoát nước", example: "Poor drainage can lead to root rot, which is fatal for most potted plants.", exampleMeaning: "Thoát nước kém có thể dẫn đến thối rễ, điều này gây hại nghiêm trọng cho hầu hết các loại cây trồng trong chậu." },
-    { word: "thrive", ipa: "/θraɪv/", meaning: "phát triển mạnh mẽ", example: "Succulents thrive in bright sunlight and require very little maintenance.", exampleMeaning: "Cây mọng nước phát triển mạnh mẽ trong ánh nắng rực rỡ và cần rất ít sự chăm sóc." },
-    { word: "fragrant", ipa: "/ˈfreɪɡrənt/", meaning: "thơm ngát", example: "I planted jasmine near the window so its fragrant scent could drift into the house.", exampleMeaning: "Tôi đã trồng hoa nhài gần cửa sổ để hương thơm ngát của nó có thể bay vào trong nhà." },
-    { word: "drought-resistant", ipa: "/draʊt rɪˈzɪstənt/", meaning: "chịu hạn", example: "Many Australian native plants are drought-resistant, making them perfect for dry climates.", exampleMeaning: "Nhiều loài cây bản địa của Úc có khả năng chịu hạn, khiến chúng trở nên hoàn hảo cho khí hậu khô hạn." }
+    { word: "green thumb", ipa: "/ɡriːn θʌm/", meaning: "khiếu làm vườn", example: "My grandmother has a real green thumb; she can make almost any plant thrive." },
+    { word: "germinate", ipa: "/ˈdʒɜːmɪneɪt/", meaning: "nảy mầm", example: "Seeds require the right balance of moisture and warmth to germinate successfully." },
+    { word: "cultivate", ipa: "/ˈkʌltɪveɪt/", meaning: "trồng trọt, canh tác", example: "Many people today choose to cultivate their own vegetables to ensure they are organic." },
+    { word: "prune", ipa: "/pruːn/", meaning: "tỉa cành", example: "It is essential to prune the rose bushes in early spring to encourage new growth." },
+    { word: "sprout up", ipa: "/spraʊt ʌp/", meaning: "mọc lên nhanh chóng", example: "After the first spring rain, tiny green shoots began to sprout up all over the garden." },
+    { word: "nutrient-rich soil", ipa: "/ˈnjuːtriənt rɪtʃ sɔɪl/", meaning: "đất giàu dinh dưỡng", example: "Lush gardens are usually the result of planting in nutrient-rich soil." },
+    { word: "wither away", ipa: "/ˈwɪðər əˈweɪ/", meaning: "héo úa, tàn lụi", example: "If you neglect your indoor plants during the summer, they will quickly wither away." },
+    { word: "hardy", ipa: "/ˈhɑːrdi/", meaning: "chịu đựng tốt", example: "Lavender is a hardy plant that can survive even in very poor soil conditions." },
+    { word: "take root", ipa: "/teɪk ruːt/", meaning: "bén rễ", example: "It takes about two weeks for the cuttings to take root in the new compost." },
+    { word: "perennial", ipa: "/pəˈreniəl/", meaning: "cây lâu năm", example: "I prefer perennials over annuals because they bloom year after year." },
+    { word: "pot on", ipa: "/pɒt ɒn/", meaning: "chuyển cây sang chậu lớn", example: "The seedlings have grown significantly, so I need to pot them on this weekend." },
+    { word: "in full bloom", ipa: "/ɪn fʊl bluːm/", meaning: "nở rộ", example: "The botanical garden is breathtaking when the cherry blossoms are in full bloom." },
+    { word: "pest control", ipa: "/pest kənˈtrəʊl/", meaning: "kiểm soát sâu bệnh", example: "Organic gardeners often use natural predators like ladybugs for pest control." },
+    { word: "lush vegetation", ipa: "/lʌʃ ˌvedʒɪˈteɪʃn/", meaning: "thảm thực vật tươi tốt", example: "The tropical region is known for its lush vegetation and high biodiversity." },
+    { word: "die back", ipa: "/daɪ bæk/", meaning: "héo đi (gốc vẫn sống)", example: "Don't worry if the lilies die back in winter; they will return in the spring." },
+    { word: "sow the seeds", ipa: "/səʊ ðə siːdz/", meaning: "gieo hạt", example: "April is the ideal month to sow the seeds for your summer vegetable patch." },
+    { word: "drainage", ipa: "/ˈdreɪnɪdʒ/", meaning: "sự thoát nước", example: "Poor drainage can lead to root rot, which is fatal for most potted plants." },
+    { word: "thrive", ipa: "/θraɪv/", meaning: "phát triển mạnh mẽ", example: "Succulents thrive in bright sunlight and require very little maintenance." },
+    { word: "fragrant", ipa: "/ˈfreɪɡrənt/", meaning: "thơm ngát", example: "I planted jasmine near the window so its fragrant scent could drift into the house." },
+    { word: "drought-resistant", ipa: "/draʊt rɪˈzɪstənt/", meaning: "chịu hạn", example: "Many Australian native plants are drought-resistant, perfect for dry climates." }
   ];
 
-  // --------------------------------------------------------------
-  // 2. GLOBAL VARIABLES & LOCALSTORAGE (favorites & progress)
-  // --------------------------------------------------------------
   let favorites = JSON.parse(localStorage.getItem('gardeningFavs')) || new Array(vocabList.length).fill(false);
   let currentCard = 0;
-  let quizActive = false;
-  let quizQuestions = [];
-  let userAnswers = [];
-  let userName = "";
   let quizIndex = 0;
   let score = 0;
-  let wrongItems = [];  // store { word, example, userAnswer, correctAnswer, type }
+  let quizQuestions = [];
+  let wrongItems = [];
 
-  // Helper: speak text using Web Speech API (natural voices)
-  function speakText(text, rate = 0.85) {
+  function speakText(text) {
     if (!window.speechSynthesis) return;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
-    utterance.rate = rate;
+    utterance.rate = 0.85;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
   }
 
-  // Update flashcard UI
   function updateFlashcard() {
     const item = vocabList[currentCard];
     document.getElementById('flashWord').innerText = item.word;
     document.getElementById('flashIpa').innerText = item.ipa;
     document.getElementById('flashMeaning').innerText = item.meaning;
     document.getElementById('flashExample').innerText = item.example;
-    document.getElementById('flashExampleMeaning').innerText = item.exampleMeaning;
-    document.getElementById('flashProgress').innerText = `${currentCard+1} / ${vocabList.length}`;
-    const card = document.getElementById('flipCard');
-    card.classList.remove('flipped');
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
   }
-  document.getElementById('prevCardBtn').addEventListener('click', () => {
-    currentCard = (currentCard - 1 + vocabList.length) % vocabList.length;
-    updateFlashcard();
-    speakText(vocabList[currentCard].word);
-  });
-  document.getElementById('nextCardBtn').addEventListener('click', () => {
-    currentCard = (currentCard + 1) % vocabList.length;
-    updateFlashcard();
-    speakText(vocabList[currentCard].word);
-  });
-  document.getElementById('flipCard').addEventListener('click', () => {
-    document.getElementById('flipCard').classList.toggle('flipped');
-  });
-  document.getElementById('playFlashAudio').addEventListener('click', (e) => {
-    e.stopPropagation();
-    speakText(vocabList[currentCard].word);
-  });
-  document.getElementById('playExampleAudio').addEventListener('click', (e) => {
-    e.stopPropagation();
-    speakText(vocabList[currentCard].example);
-  });
 
-  // Render vocabulary table with star toggle
   function renderTable(filter = 'all') {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
     vocabList.forEach((item, idx) => {
       if (filter === 'starred' && !favorites[idx]) return;
       const row = tbody.insertRow();
-      row.insertCell(0).innerText = idx+1;
-      row.insertCell(1).innerText = item.word;
-      row.insertCell(2).innerText = item.ipa;
-      const audioCell = row.insertCell(3);
-      const audioBtn = document.createElement('button');
-      audioBtn.innerText = '🔊';
-      audioBtn.onclick = () => speakText(item.word);
-      audioCell.appendChild(audioBtn);
-      row.insertCell(4).innerText = item.meaning;
-      row.insertCell(5).innerText = item.example;
-      row.insertCell(6).innerText = item.exampleMeaning;
-      const starCell = row.insertCell(7);
-      const starBtn = document.createElement('button');
-      starBtn.innerText = favorites[idx] ? '⭐' : '☆';
-      starBtn.classList.add('star-btn');
-      if (favorites[idx]) starBtn.classList.add('active');
-    starBtn.onclick = () => {
-  favorites[idx] = !favorites[idx];
-  localStorage.setItem('gardeningFavs', JSON.stringify(favorites));
-  starBtn.innerText = favorites[idx] ? '⭐' : '☆';
-  if (favorites[idx]) {
-    starBtn.classList.add('active');
-  } else {
-    starBtn.classList.remove('active');
-  }
-  // Nếu đang ở chế độ lọc "starred only" và vừa bỏ sao -> cần xóa dòng này khỏi bảng
-  const currentFilter = document.querySelector('.filter-btn.active')?.innerText === '⭐ Starred only' ? 'starred' : 'all';
-  if (currentFilter === 'starred' && !favorites[idx]) {
-    // Xóa dòng
-    row.remove();
-  } else if (currentFilter === 'all') {
-    // Không cần làm gì thêm
-  }
-};
-
-  // --------------------------------------------------------------
-  // 3. QUIZ GENERATOR (mix 3 types)
-  // --------------------------------------------------------------
-  function generateQuiz() {
-    let qs = [];
-    for (let i = 0; i < vocabList.length; i++) {
-      const type = i % 3; // 0: multiple choice, 1: translation typing, 2: listening typing
-      if (type === 0) {
-        // multiple choice: fill blank with word definition
-        const correct = vocabList[i].word;
-        let options = [correct];
-        while (options.length < 4) {
-          const rand = vocabList[Math.floor(Math.random() * vocabList.length)].word;
-          if (!options.includes(rand)) options.push(rand);
-        }
-        options = shuffleArray(options);
-        qs.push({
-          type: 'mc',
-          question: `What does "${vocabList[i].meaning}" mean in English?`,
-          correct: correct,
-          options: options
-        });
-      } else if (type === 1) {
-        qs.push({
-          type: 'translate',
-          question: `Translate to English: "${vocabList[i].meaning}"`,
-          correct: vocabList[i].word,
-          exampleSentence: vocabList[i].example
-        });
-      } else {
-        qs.push({
-          type: 'listening',
-          question: `Listen and type the sentence:`,
-          audioText: vocabList[i].example,
-          correct: vocabList[i].example,
-          wordHint: vocabList[i].word
-        });
-      }
-    }
-    return shuffleArray(qs);
-  }
-
-  function shuffleArray(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
-  // Feedback effects
-  function playSoundEffect(isCorrect) {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    osc.type = 'sine';
-    osc.frequency.value = isCorrect ? 880 : 440;
-    gain.gain.value = 0.1;
-    osc.start();
-    gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.4);
-    osc.stop(audioCtx.currentTime + 0.4);
-  }
-
-  function showFeedback(correct, element) {
-    const feedbackDiv = document.getElementById('quizFeedback') || (() => { const d = document.createElement('div'); d.id = 'quizFeedback'; document.getElementById('quizContainer').appendChild(d); return d; })();
-    feedbackDiv.innerHTML = `<div class="quiz-feedback ${correct ? 'correct' : 'wrong'}">${correct ? '✔ Correct!' : '❌ Incorrect'}</div>`;
-    if (correct) {
-      element?.classList.add('glow');
-      setTimeout(() => element?.classList.remove('glow'), 500);
-    } else {
-      element?.classList.add('shake');
-      setTimeout(() => element?.classList.remove('shake'), 500);
-    }
-    playSoundEffect(correct);
-    setTimeout(() => { feedbackDiv.innerHTML = ''; }, 1000);
-  }
-
-  // Render current quiz question
-  function renderQuizQuestion() {
-    const q = quizQuestions[quizIndex];
-    const container = document.getElementById('quizContainer');
-    if (!container) return;
-    let html = `<div class="pastel-card"><p><strong>Question ${quizIndex+1}/${quizQuestions.length}</strong></p>`;
-    if (q.type === 'mc') {
-      html += `<p>${q.question}</p><div class="quiz-options" id="mcOptions">`;
-      q.options.forEach(opt => {
-        html += `<div class="quiz-option" data-value="${opt}">${opt}</div>`;
-      });
-      html += `</div>`;
-    } else if (q.type === 'translate') {
-      html += `<p>${q.question}</p><input type="text" id="translateInput" class="quiz-input" placeholder="Type your answer"><button id="submitTranslate">Check</button>`;
-    } else {
-      html += `<p>${q.question}</p><button id="playListeningAudio">🔊 Play sentence</button><input type="text" id="listenInput" class="quiz-input" placeholder="Type the sentence"><button id="submitListen">Check</button>`;
-    }
-    html += `<div id="quizFeedback"></div></div>`;
-    container.innerHTML = html;
-
-    if (q.type === 'mc') {
-      document.querySelectorAll('.quiz-option').forEach(opt => {
-        opt.addEventListener('click', (e) => {
-          const selected = e.currentTarget.dataset.value;
-          const correct = (selected === q.correct);
-          if (correct) score++;
-          else wrongItems.push({ word: q.correct, example: q.correct, userAnswer: selected, correctAnswer: q.correct, type: 'mc' });
-          showFeedback(correct, e.currentTarget);
-          setTimeout(() => nextQuestion(), 1000);
-        });
-      });
-    } else if (q.type === 'translate') {
-      document.getElementById('submitTranslate').addEventListener('click', () => {
-        const answer = document.getElementById('translateInput').value.trim().toLowerCase();
-        const correct = q.correct.toLowerCase();
-        const isOk = (answer === correct);
-        if (isOk) score++;
-        else wrongItems.push({ word: q.correct, example: q.exampleSentence, userAnswer: answer, correctAnswer: q.correct, type: 'translate' });
-        showFeedback(isOk, document.getElementById('submitTranslate'));
-        setTimeout(() => nextQuestion(), 1000);
-      });
-    } else {
-      document.getElementById('playListeningAudio').addEventListener('click', () => speakText(q.audioText, 0.7));
-      document.getElementById('submitListen').addEventListener('click', () => {
-        const answer = document.getElementById('listenInput').value.trim().toLowerCase();
-        const correct = q.correct.toLowerCase();
-        const isOk = (answer === correct);
-        if (isOk) score++;
-        else wrongItems.push({ word: q.wordHint, example: q.correct, userAnswer: answer, correctAnswer: q.correct, type: 'listening' });
-        showFeedback(isOk, document.getElementById('submitListen'));
-        setTimeout(() => nextQuestion(), 1000);
-      });
-    }
-  }
-
-  function nextQuestion() {
-    quizIndex++;
-    if (quizIndex < quizQuestions.length) {
-      renderQuizQuestion();
-    } else {
-      showResult();
-    }
-  }
-
-  function showResult() {
-    const quizDiv = document.getElementById('quizArea');
-    const resultDiv = document.getElementById('resultArea');
-    quizDiv.style.display = 'none';
-    resultDiv.style.display = 'block';
-    let wrongHtml = '';
-    if (wrongItems.length > 0) {
-      wrongHtml = `<div class="wrong-list"><h4>❌ Wrong answers:</h4><ul>`;
-      wrongItems.forEach(w => {
-        wrongHtml += `<li><strong>${w.word}</strong> – your answer: "${w.userAnswer}" | correct: "${w.correctAnswer}"</li>`;
-      });
-      wrongHtml += `</ul><button id="reviewWrongBtn">Review wrong answers</button></div>`;
-    } else {
-      wrongHtml = `<p>🎉 Perfect! No mistakes.</p>`;
-    }
-    resultDiv.innerHTML = `
-      <div class="result-screen">
-        <h3>📊 Result for ${userName}</h3>
-        <p>Correct: ${score} / ${quizQuestions.length}</p>
-        ${wrongHtml}
-        <button id="restartQuizBtn">🔄 Restart Quiz</button>
-      </div>
-    `;
-    document.getElementById('restartQuizBtn')?.addEventListener('click', () => location.reload());
-    document.getElementById('reviewWrongBtn')?.addEventListener('click', () => {
-      // scroll to table and filter starred? but we can simply highlight
-      alert('Review wrong words manually in the vocabulary table above.');
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
     });
   }
 
-  // Start quiz flow
-  document.getElementById('startQuizBtn').addEventListener('click', () => {
-    const name = prompt("Enter your name to start the quiz:", "Student");
-    if (!name) return;
-    userName = name;
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('gardeningFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Flashcard Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  // Filter Controls
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 2; // 0: MC, 1: Typing
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
+      } else {
+        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
     quizQuestions = generateQuiz();
-    userAnswers = [];
-    quizIndex = 0;
-    score = 0;
-    wrongItems = [];
+    quizIndex = 0; score = 0; wrongItems = [];
     document.getElementById('quizArea').style.display = 'block';
     document.getElementById('resultArea').style.display = 'none';
     renderQuizQuestion();
-  });
-  updateFlashcard();
-  speakText(vocabList[0].word);
-</script>
+  };
 
-<!-- BEGINNER INSTRUCTIONS (visible in HTML but not intrusive) -->
-<details style="margin-top: 3rem; background: #f9f3ff; padding: 1rem; border-radius: 20px;">
-  <summary>📘 How to edit this vocabulary post (for beginners)</summary>
-  <ul>
-    <li><strong>Add new words:</strong> Edit the <code>vocabList</code> array inside the script. Each object must have <code>word, ipa, meaning, example, exampleMeaning</code>. No external files needed.</li>
-    <li><strong>Change audio:</strong> The code uses browser's Web Speech API. To change voice/rate, edit <code>speakText()</code> parameters. No audio uploads required.</li>
-    <li><strong>Quiz behavior:</strong> Questions are automatically generated from the list. Modify <code>generateQuiz()</code> to change question types ratio.</li>
-    <li><strong>Favorites:</strong> Stored in localStorage – they persist across sessions.</li>
-    <li><strong>To use in Jekyll:</strong> Copy this entire markdown file into <code>_posts/</code> with a date prefix. The layout <code>post</code> will wrap it nicely.</li>
-  </ul>
-</details>
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card"><h3>Question ${quizIndex + 1}/20</h3><p>${q.q}</p>`;
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Type here..."><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check</button>`;
+    }
+    html += `<div id="quizFeedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Correct!</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Wrong! Answer: ${q.correct}</p>`;
+    }
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 20) renderQuizQuestion();
+      else showResults();
+    }, 1000);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `<div class="pastel-card"><h2>Quiz Finished!</h2><p>Your score: ${score}/20</p>
+      ${wrongItems.length > 0 ? `<h4>Review:</h4><ul>` + wrongItems.map(w => `<li>${w.q} (You said: ${w.user || 'empty'})</li>`).join('') + `</ul>` : '<p>Perfect!</p>'}
+      <button onclick="location.reload()">Try Again</button></div>`;
+  }
+
+  // Init
+  updateFlashcard();
+  renderTable();
+</script>
