@@ -48,7 +48,7 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     color: white;
     transform: scale(1.02);
   }
-  /* ========== FLASHCARD 3D ========== */
+  /* ========== FLASHCARD 3D (UPDATED SIZE) ========== */
   .flashcard-area {
     display: flex;
     justify-content: center;
@@ -57,8 +57,8 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
   .flip-card {
     background-color: transparent;
     width: 100%;
-    max-width: 500px;
-    height: 320px;
+    max-width: 650px; /* Tăng chiều rộng */
+    height: 400px;    /* Tăng chiều cao */
     perspective: 1000px;
     cursor: pointer;
   }
@@ -81,7 +81,7 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     height: 100%;
     backface-visibility: hidden;
     border-radius: 28px;
-    padding: 1.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,12 +93,13 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     transform: rotateY(180deg);
     overflow-y: auto;
   }
-  .flash-word { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .flash-ipa { font-family: monospace; color: #888; }
-  .flash-meaning { font-size: 1.5rem; color: #f5576c; margin-bottom: 1rem; }
-  .flash-example { font-size: 1rem; line-height: 1.4; background: #f9f3ff; padding: 0.8rem; border-radius: 20px; }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #333; } /* Chữ nhỏ lại */
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #f5576c; margin-bottom: 1rem; } /* Chữ nhỏ lại */
+  .flash-example { font-size: 0.95rem; line-height: 1.5; background: #f9f3ff; padding: 1rem; border-radius: 20px; }
   .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
   .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
+
   /* ========== VOCABULARY TABLE ========== */
   .table-wrapper { overflow-x: auto; margin-top: 1rem; }
   .vocab-table {
@@ -118,18 +119,21 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
   .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
   .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
   .star-btn.active { color: #f5576c; }
+
   /* ========== QUIZ ========== */
   .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
-  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; }
-  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; }
+  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; }
+  .quiz-option:hover { background: #e0d8ff; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; outline: none; text-align: center; }
   .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
   .correct { color: #28a745; }
   .wrong { color: #dc3545; }
+  .audio-quiz-btn { font-size: 1.5rem; margin-bottom: 1rem; padding: 10px 25px; }
 </style>
 
 <div class="vocab-container" id="vocabApp">
   <h1>🌱 Gardening Vocabulary</h1>
-  <p>Learn 20 essential words for IELTS 7.0+. Use flashcards, table, and quiz to master them.</p>
+  <p>Learn 20 essential words for IELTS 7.0+. Master them through flashcards, table, and interactive quiz.</p>
 
   <h2>📇 Flashcards</h2>
   <div class="flashcard-area">
@@ -139,12 +143,12 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
           <div class="flash-word" id="flashWord"></div>
           <div class="flash-ipa" id="flashIpa"></div>
           <button id="playFlashAudio">🔊 Play word</button>
-          <p style="font-size:0.8rem; margin-top:10px;">👆 Tap to flip</p>
+          <p style="font-size:0.8rem; margin-top:20px; color: #aaa;">👆 Tap to flip</p>
         </div>
         <div class="flip-card-back">
           <div class="flash-meaning" id="flashMeaning"></div>
           <div class="flash-example" id="flashExample"></div>
-          <button id="playExampleAudio" style="margin-top:10px;">🔊 Play example</button>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Play example</button>
         </div>
       </div>
     </div>
@@ -178,11 +182,11 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
   </div>
 
   <h2>📝 Quiz</h2>
-  <button id="startQuizBtn">🌱 Start Quiz (20 questions)</button>
-  <div id="quizArea" style="display:none;">
+  <button id="startQuizBtn">🌱 Start Mixed Quiz (20 questions)</button>
+  <div id="quizArea" style="display:none; margin-top: 20px;">
     <div id="quizContainer"></div>
   </div>
-  <div id="resultArea" style="display:none;"></div>
+  <div id="resultArea" style="display:none; margin-top: 20px;"></div>
 </div>
 
 <script>
@@ -282,10 +286,10 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
     renderTable('starred');
   };
 
-  // Quiz Logic
+  // Quiz Logic (Updated with Audio type)
   function generateQuiz() {
     let qs = vocabList.map((item, i) => {
-      const type = i % 2; // 0: MC, 1: Typing
+      const type = i % 3; // 0: MC, 1: Typing (Translate), 2: Audio (Listening)
       if (type === 0) {
         let options = [item.word];
         while (options.length < 4) {
@@ -293,8 +297,10 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
           if (!options.includes(r)) options.push(r);
         }
         return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
-      } else {
+      } else if (type === 1) {
         return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen and type the word you hear:`, correct: item.word };
       }
     });
     return qs.sort(() => Math.random() - 0.5);
@@ -310,41 +316,61 @@ excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table
 
   function renderQuizQuestion() {
     const q = quizQuestions[quizIndex];
-    let html = `<div class="pastel-card"><h3>Question ${quizIndex + 1}/20</h3><p>${q.q}</p>`;
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
+    
     if (q.type === 'mc') {
       html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
-    } else {
-      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Type here..."><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check</button>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Replay Audio</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Answer</button>`;
+      // Tự động phát lần đầu cho loại audio
+      setTimeout(() => speakText(q.correct), 300);
     }
-    html += `<div id="quizFeedback"></div></div>`;
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
     document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
   }
 
   window.checkAnswer = function(ans) {
     const q = quizQuestions[quizIndex];
     const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
     const feedback = document.getElementById('quizFeedback');
+    
     if (isCorrect) {
       score++;
-      feedback.innerHTML = `<p class="correct">✔ Correct!</p>`;
+      feedback.innerHTML = `<p class="correct">✔ Excellent! Correct answer.</p>`;
     } else {
       wrongItems.push({ q: q.correct, user: ans });
-      feedback.innerHTML = `<p class="wrong">❌ Wrong! Answer: ${q.correct}</p>`;
+      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct answer was: <strong>${q.correct}</strong></p>`;
     }
+    
     setTimeout(() => {
       quizIndex++;
       if (quizIndex < 20) renderQuizQuestion();
       else showResults();
-    }, 1000);
+    }, 1500);
   };
 
   function showResults() {
     document.getElementById('quizArea').style.display = 'none';
     const res = document.getElementById('resultArea');
     res.style.display = 'block';
-    res.innerHTML = `<div class="pastel-card"><h2>Quiz Finished!</h2><p>Your score: ${score}/20</p>
-      ${wrongItems.length > 0 ? `<h4>Review:</h4><ul>` + wrongItems.map(w => `<li>${w.q} (You said: ${w.user || 'empty'})</li>`).join('') + `</ul>` : '<p>Perfect!</p>'}
-      <button onclick="location.reload()">Try Again</button></div>`;
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Quiz Complete! 🌱</h2>
+        <p style="font-size:1.5rem; margin:15px 0;">Final Score: <strong>${score}/20</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:15px; border-radius:15px; margin-top:15px;">
+            <h4 style="color:#f5576c;">Words to review:</h4>
+            <ul style="padding-left:20px;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (You typed: <span style="text-decoration:line-through; color:#888;">${w.user || '[empty]'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#28a745; font-weight:bold;">Perfect score! You are a master gardener!</p>'}
+        <button onclick="location.reload()" style="margin-top:20px;">Try Again</button>
+      </div>`;
   }
 
   // Init
