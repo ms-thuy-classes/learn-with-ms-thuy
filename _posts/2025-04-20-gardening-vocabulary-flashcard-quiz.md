@@ -4,7 +4,7 @@ title: "🌱 Gardening Vocabulary: Flashcards, Table & Quiz"
 date: 2026-04-20
 categories: Vocabulary
 tags: [gardening, flashcards, quiz, interactive]
-featured_image: "https://images.pexels.com/photos/1264247/pexels-photo-1264247.jpeg?auto=compress&cs=tinysrgb&w=800"
+featured_image: "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/GwwMl5W6WmRALiMBRHGi5PLceUXDQlviSYQhg3fbnYW.jpegw=800"
 excerpt: "Learn 20 gardening words with interactive flashcards, a sortable table, and a mixed‑type quiz."
 ---
 
