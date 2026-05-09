@@ -13,12 +13,39 @@ collections:
   posts:
     output: true
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Files/folders to exclude from build
 exclude:
   - .gitignore
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - vendor
+
+# Default frontmatter values
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Sass/SCSS settings (nếu có)
+sass:
+  style: compressed
+
+# Markdown processor settings
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
