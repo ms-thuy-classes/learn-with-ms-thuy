@@ -1,4 +1,1851 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/learn-with-ms-thuy/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/learn-with-ms-thuy/" rel="alternate" type="text/html" /><updated>2026-04-20T21:03:44+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/feed.xml</id><title type="html">Learning English with Ms. Thuy</title><subtitle>Fun and effective English lessons for everyone</subtitle><entry><title type="html">🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/vocabulary/technology/" rel="alternate" type="text/html" title="🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/vocabulary/technology</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/vocabulary/technology/"><![CDATA[<style>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/learn-with-ms-thuy/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/learn-with-ms-thuy/" rel="alternate" type="text/html" /><updated>2026-05-01T13:48:46+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/feed.xml</id><title type="html">Learn with Ms. Thúy</title><subtitle>Fun and effective English lessons for everyone - Premium English learning experience</subtitle><entry><title type="html">🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/vocabulary/animals/" rel="alternate" type="text/html" title="🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/vocabulary/animals</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/vocabulary/animals/"><![CDATA[<style>
+  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
+  .vocab-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    display: inline-block;
+    padding: 0 0.5rem 0.2rem;
+    border-radius: 20px;
+    margin: 1.5rem 0 1rem;
+  }
+  .pastel-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button, .filter-btn {
+    background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #5a3e7c;
+    margin: 5px;
+  }
+  button:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    transform: scale(1.02);
+  }
+  /* ========== FLASHCARD 3D (LARGE SIZE) ========== */
+  .flashcard-area {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fef5f7); }
+  .flip-card-back {
+    background: linear-gradient(145deg, #f0f7ff, #ffffff);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #333; }
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #f5576c; margin-bottom: 1rem; }
+  .flash-example { font-size: 0.95rem; line-height: 1.5; background: #f9f3ff; padding: 1rem; border-radius: 20px; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
+
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+  }
+  .vocab-table th, .vocab-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border: 1px solid #e6d9f0;
+  }
+  .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
+
+  /* ========== QUIZ ========== */
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; }
+  .quiz-option:hover { background: #e0d8ff; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; outline: none; text-align: center; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
+  .correct { color: #28a745; }
+  .wrong { color: #dc3545; }
+  .audio-quiz-btn { font-size: 1.5rem; margin-bottom: 1rem; padding: 10px 25px; }
+</style>
+
+<div class="vocab-container" id="vocabApp">
+  <h1>🐾 Animals &amp; Wildlife Vocabulary</h1>
+  <p>Boost your IELTS score with 20 natural animal-related words and phrases. Use these interactive tools to memorize them efficiently.</p>
+
+  <h2>📇 Flashcards</h2>
+  <div class="flashcard-area">
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="flash-word" id="flashWord"></div>
+          <div class="flash-ipa" id="flashIpa"></div>
+          <button id="playFlashAudio">🔊 Play word</button>
+          <p style="font-size:0.8rem; margin-top:20px; color: #aaa;">👆 Tap to flip</p>
+        </div>
+        <div class="flip-card-back">
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-example" id="flashExample"></div>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Play example</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-controls">
+    <button id="prevCardBtn">◀ Previous</button>
+    <button id="nextCardBtn">Next ▶</button>
+  </div>
+  <div class="progress-bar" id="flashProgress"></div>
+
+  <h2>📋 Vocabulary Table</h2>
+  <div class="filter-group">
+    <button id="filterAllBtn" class="filter-btn active">All Words</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example</th>
+          <th>⭐</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <h2>📝 Quiz</h2>
+  <button id="startQuizBtn">🐾 Start Mixed Quiz (20 questions)</button>
+  <div id="quizArea" style="display:none; margin-top: 20px;">
+    <div id="quizContainer"></div>
+  </div>
+  <div id="resultArea" style="display:none; margin-top: 20px;"></div>
+</div>
+
+<script>
+  const vocabList = [
+    { word: "biodiversity", ipa: "/ˌbaɪəʊdaɪˈvɜːsəti/", meaning: "đa dạng sinh học", example: "The Amazon rainforest is famous for its incredible biodiversity." },
+    { word: "endangered species", ipa: "/ɪnˈdeɪndʒəd ˈspiːʃiːz/", meaning: "loài đang gặp nguy hiểm", example: "Tigers are now an endangered species due to illegal hunting and habitat loss." },
+    { word: "natural habitat", ipa: "/ˈnætʃrəl ˈhæbɪtæt/", meaning: "môi trường sống tự nhiên", example: "It's much better to see animals in their natural habitat than in small cages." },
+    { word: "nocturnal", ipa: "/nɒkˈtɜːnl/", meaning: "hoạt động về đêm", example: "Owls are nocturnal creatures that hunt for food when it gets dark." },
+    { word: "apex predator", ipa: "/ˈeɪpeks ˈpredətə(r)/", meaning: "động vật ăn thịt đầu bảng", example: "The great white shark is a formidable apex predator of the ocean." },
+    { word: "domesticated", ipa: "/dəˈmestɪkeɪtɪd/", meaning: "đã được thuần hóa", example: "Dogs were one of the first animals to be domesticated by humans." },
+    { word: "die out", ipa: "/daɪ aʊt/", meaning: "tuyệt chủng/dần mất đi", example: "Dinosaurs died out millions of years ago after a massive asteroid hit Earth." },
+    { word: "feed on", ipa: "/fiːd ɒn/", meaning: "ăn (thứ gì đó)", example: "Cows mostly feed on grass and clover found in the pastures." },
+    { word: "in the wild", ipa: "/ɪn ðə waɪld/", meaning: "trong môi trường hoang dã", example: "There are only a few thousand giant pandas left living in the wild." },
+    { word: "stray", ipa: "/streɪ/", meaning: "động vật bị lạc/vô chủ", example: "The city has set up a shelter to take care of stray cats and dogs." },
+    { word: "conservation", ipa: "/ˌkɒnsəˈveɪʃn/", meaning: "sự bảo tồn", example: "Wildlife conservation is essential to protect our planet's ecosystems." },
+    { word: "bring up", ipa: "/brɪŋ ʌp/", meaning: "nuôi nấng/chăm sóc", example: "She brought up the orphaned cub until it was strong enough to return to the forest." },
+    { word: "marine life", ipa: "/məˈriːn laɪf/", meaning: "sinh vật biển", example: "Pollution in the oceans is causing serious harm to marine life." },
+    { word: "take after", ipa: "/teɪk ˈɑːftə(r)/", meaning: "giống (ai/cái gì)", example: "This puppy really takes after its mother in terms of its calm temperament." },
+    { word: "migrate", ipa: "/maɪˈɡreɪt/", meaning: "di cư", example: "Many species of birds migrate south to escape the harsh winter cold." },
+    { word: "bond with", ipa: "/bɒnd wɪð/", meaning: "hình thành mối liên kết với", example: "It takes time for a rescued pet to bond with its new owner." },
+    { word: "poach", ipa: "/pəʊtʃ/", meaning: "săn bắn trộm", example: "Elephants are often poached for their ivory tusks, which is a tragedy." },
+    { word: "territorial", ipa: "/ˌterəˈtɔːriəl/", meaning: "có tính bảo vệ lãnh thổ", example: "Some male animals become very territorial during the mating season." },
+    { word: "cope with", ipa: "/kəʊp wɪð/", meaning: "đối mặt/thích nghi với", example: "Desert animals have evolved special ways to cope with the extreme heat." },
+    { word: "keep an eye on", ipa: "/kiːp ən aɪ ɒn/", meaning: "theo dõi/quan sát kỹ", example: "The zookeeper needs to keep an eye on the newborn giraffe to ensure it's healthy." }
+  ];
+
+  let favorites = JSON.parse(localStorage.getItem('animalFavs')) || new Array(vocabList.length).fill(false);
+  let currentCard = 0;
+  let quizIndex = 0;
+  let score = 0;
+  let quizQuestions = [];
+  let wrongItems = [];
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function updateFlashcard() {
+    const item = vocabList[currentCard];
+    document.getElementById('flashWord').innerText = item.word;
+    document.getElementById('flashIpa').innerText = item.ipa;
+    document.getElementById('flashMeaning').innerText = item.meaning;
+    document.getElementById('flashExample').innerText = item.example;
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
+  }
+
+  function renderTable(filter = 'all') {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    vocabList.forEach((item, idx) => {
+      if (filter === 'starred' && !favorites[idx]) return;
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
+    });
+  }
+
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('animalFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Flashcard Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  // Filter Controls
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 3; // 0: MC, 1: Typing, 2: Audio
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
+      } else if (type === 1) {
+        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen and type the word you hear:`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
+    quizQuestions = generateQuiz();
+    quizIndex = 0; score = 0; wrongItems = [];
+    document.getElementById('quizArea').style.display = 'block';
+    document.getElementById('resultArea').style.display = 'none';
+    renderQuizQuestion();
+  };
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
+    
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Replay Audio</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Answer</button>`;
+      setTimeout(() => speakText(q.correct), 300);
+    }
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Excellent! Correct answer.</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct answer was: <strong>${q.correct}</strong></p>`;
+    }
+    
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 20) renderQuizQuestion();
+      else showResults();
+    }, 1500);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Quiz Complete! 🐾</h2>
+        <p style="font-size:1.5rem; margin:15px 0;">Final Score: <strong>${score}/20</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:15px; border-radius:15px; margin-top:15px;">
+            <h4 style="color:#f5576c;">Words to review:</h4>
+            <ul style="padding-left:20px;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (You typed: <span style="text-decoration:line-through; color:#888;">${w.user || '[empty]'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#28a745; font-weight:bold;">Perfect score! You are an animal expert!</p>'}
+        <button onclick="location.reload()" style="margin-top:20px;">Try Again</button>
+      </div>`;
+  }
+
+  // Init
+  updateFlashcard();
+  renderTable();
+</script>]]></content><author><name></name></author><category term="Vocabulary" /><category term="animals" /><category term="wildlife" /><category term="ielts-speaking" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 animal-related words and phrases for IELTS Speaking Band 7.0+ with interactive tools.]]></summary></entry><entry><title type="html">🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/technology/" rel="alternate" type="text/html" title="🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/technology</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/technology/"><![CDATA[<style>
+  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
+  .vocab-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    display: inline-block;
+    padding: 0 0.5rem 0.2rem;
+    border-radius: 20px;
+    margin: 1.5rem 0 1rem;
+  }
+  .pastel-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button, .filter-btn {
+    background: linear-gradient(135deg, #e0f7fa, #e1f5fe);
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #01579b;
+    margin: 5px;
+  }
+  button:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #4fc3f7, #81d4fa);
+    color: white;
+    transform: scale(1.02);
+  }
+
+  /* ========== FLASHCARD 3D (LARGE SIZE) ========== */
+  .flashcard-area {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #f0faff); }
+  .flip-card-back {
+    background: linear-gradient(145deg, #e1f5fe, #ffffff);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #0277bd; }
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; margin-bottom: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #d81b60; margin-bottom: 1.5rem; }
+  .flash-example { font-size: 1rem; line-height: 1.6; background: #f1f8e9; padding: 1.2rem; border-radius: 20px; color: #333; border: 1px dashed #81c784; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; color: #666; }
+
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+  }
+  .vocab-table th, .vocab-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e1f5fe;
+  }
+  .vocab-table th { background: #e1f5fe; color: #01579b; font-weight: 700; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
+
+  /* ========== QUIZ ========== */
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #e3f2fd; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; border: 1px solid transparent; }
+  .quiz-option:hover { background: #bbdefb; border-color: #90caf9; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 2px solid #e1f5fe; margin: 10px 0; outline: none; text-align: center; font-size: 1.1rem; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; font-size: 1.1rem; }
+  .correct { color: #2e7d32; }
+  .wrong { color: #c62828; }
+  .audio-quiz-btn { font-size: 1.4rem; margin-bottom: 1rem; padding: 12px 30px; border: 2px solid #81d4fa; }
+</style>
+
+<div class="vocab-container" id="vocabApp">
+  <h1>🚀 Cutting-Edge Technology Vocabulary</h1>
+  <p>Elevate your IELTS Speaking from Band 6.0 to 7.5+ with 30 high-level phrases and natural tech expressions.</p>
+
+  <h2>📇 Flashcards</h2>
+  <div class="flashcard-area">
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="flash-word" id="flashWord"></div>
+          <div class="flash-ipa" id="flashIpa"></div>
+          <button id="playFlashAudio">🔊 Play Pronunciation</button>
+          <p style="font-size:0.85rem; margin-top:25px; color: #bbb;">👆 Click to reveal definition</p>
+        </div>
+        <div class="flip-card-back">
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-example" id="flashExample"></div>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Listen to Example</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-controls">
+    <button id="prevCardBtn">◀ Prev</button>
+    <button id="nextCardBtn">Next ▶</button>
+  </div>
+  <div class="progress-bar" id="flashProgress"></div>
+
+  <h2>📋 Mastery Table</h2>
+  <div class="filter-group">
+    <button id="filterAllBtn" class="filter-btn active">All Tech Terms</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Term</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example Usage</th>
+          <th>⭐</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <h2>📝 Mastery Quiz</h2>
+  <button id="startQuizBtn">⚡ Start 30-Question Tech Quiz</button>
+  <div id="quizArea" style="display:none; margin-top: 25px;">
+    <div id="quizContainer"></div>
+  </div>
+  <div id="resultArea" style="display:none; margin-top: 25px;"></div>
+</div>
+
+<script>
+  const vocabList = [
+    { word: "cutting-edge", ipa: "/ˌkʌtɪŋ ˈedʒ/", meaning: "tiên tiến nhất", example: "The laboratory is equipped with cutting-edge technology for cancer research." },
+    { word: "tech-savvy", ipa: "/tek ˈsævi/", meaning: "rành công nghệ", example: "The younger generation is incredibly tech-savvy, often teaching their parents how to use apps." },
+    { word: "state-of-the-art", ipa: "/ˌsteɪt əv ði ˈɑːt/", meaning: "hiện đại nhất hiện nay", example: "The new stadium features a state-of-the-art security system." },
+    { word: "user-friendly", ipa: "/ˌjuːzə ˈfrendli/", meaning: "dễ sử dụng", example: "The software is very user-friendly, even for those with limited computer skills." },
+    { word: "streamline", ipa: "/ˈstriːmlaɪn/", meaning: "tối ưu hóa/đơn giản hóa", example: "AI helps to streamline administrative tasks, saving businesses thousands of hours." },
+    { word: "obsolete", ipa: "/ˈɒbsəliːt/", meaning: "lỗi thời", example: "With the rise of smartphones, traditional landline phones have become almost obsolete." },
+    { word: "digital detox", ipa: "/ˌdɪdʒɪtl ˈdiːtɒks/", meaning: "cai nghiện kỹ thuật số", example: "I decided to go on a digital detox last weekend to reconnect with nature." },
+    { word: "back up", ipa: "/bæk ʌp/", meaning: "sao lưu", example: "You should always back up your important files in case your hard drive crashes." },
+    { word: "log on", ipa: "/lɒɡ ɒn/", meaning: "đăng nhập", example: "I need to log on to the company portal to submit my weekly report." },
+    { word: "scroll through", ipa: "/skrəʊl θruː/", meaning: "cuộn xem (thông tin)", example: "People often waste hours just scrolling through their social media feeds." },
+    { word: "hack into", ipa: "/hæk ˈɪntə/", meaning: "xâm nhập trái phép", example: "Cybercriminals tried to hack into the bank's database last night." },
+    { word: "boot up", ipa: "/buːt ʌp/", meaning: "khởi động máy tính", example: "My old laptop takes ages to boot up every morning." },
+    { word: "wipe out", ipa: "/waɪp aʊt/", meaning: "xóa sạch hoàn toàn", example: "A major virus threat could potentially wipe out all the data on the server." },
+    { word: "go viral", ipa: "/ɡəʊ ˈvaɪrəl/", meaning: "lan truyền nhanh chóng", example: "The video of the dancing robot went viral within just a few hours." },
+    { word: "privacy breach", ipa: "/ˈpraɪvəsi briːtʃ/", meaning: "vi phạm quyền riêng tư", example: "The recent privacy breach led to millions of passwords being leaked online." },
+    { word: "glitchy", ipa: "/ˈɡlɪtʃi/", meaning: "bị lỗi (phần mềm)", example: "I find this app very glitchy; it keeps crashing whenever I try to upload a photo." },
+    { word: "disruptive technology", ipa: "/dɪsˈrʌptɪv tekˈnɒlədʒi/", meaning: "công nghệ mang tính đột phá", example: "Electric vehicles are a disruptive technology that is changing the auto industry." },
+    { word: "automation", ipa: "/ˌɔːtəˈmeɪʃn/", meaning: "tự động hóa", example: "Automation in factories has led to increased production but fewer manual jobs." },
+    { word: "game-changer", ipa: "/ˈɡeɪm tʃeɪndʒə(r)/", meaning: "thứ làm thay đổi cuộc chơi", example: "The invention of the internet was a total game-changer for global communication." },
+    { word: "tech giant", ipa: "/tek ˈdʒaɪənt/", meaning: "ông lớn công nghệ", example: "Tech giants like Google and Apple dominate the global market." },
+    { word: "high-tech", ipa: "/ˌhaɪ ˈtek/", meaning: "công nghệ cao", example: "The military uses high-tech gadgets for surveillance and reconnaissance." },
+    { word: "cloud computing", ipa: "/ˈklaʊd kəmˌpjuːtɪŋ/", meaning: "điện toán đám mây", example: "Cloud computing allows us to access our files from any device, anywhere." },
+    { word: "cybersecurity", ipa: "/ˌsaɪbə sɪˈkjʊərəti/", meaning: "an ninh mạng", example: "Companies are investing heavily in cybersecurity to protect sensitive customer data." },
+    { word: "breakneck speed", ipa: "/ˈbreɪknek spiːd/", meaning: "tốc độ nhanh chóng mặt", example: "Technology is evolving at breakneck speed, making it hard to keep up." },
+    { word: "AI-driven", ipa: "/ˌeɪ ˈaɪ ˈdrɪvn/", meaning: "được vận hành bởi AI", example: "AI-driven algorithms are used to personalize the content we see online." },
+    { word: "social media footprint", ipa: "/ˈsəʊʃl ˈmiːdiə ˈfʊtprɪnt/", meaning: "dấu vết trên mạng xã hội", example: "Be careful what you post, as your social media footprint can be seen by future employers." },
+    { word: "pull up", ipa: "/pʊl ʌp/", meaning: "mở ra/truy cập (thông tin)", example: "Give me a second to pull up the latest sales figures on my tablet." },
+    { word: "sign up", ipa: "/saɪn ʌp/", meaning: "đăng ký (tài khoản)", example: "You need to sign up for a premium account to access the advanced features." },
+    { word: "modern-day miracle", ipa: "/ˈmɒdn deɪ ˈmɪrəkl/", meaning: "phép màu thời hiện đại", example: "The ability to video call someone across the globe is a modern-day miracle." },
+    { word: "technophobe", ipa: "/ˈteknəfəʊb/", meaning: "người sợ công nghệ", example: "My grandfather is a bit of a technophobe and refuses to use a smartphone." }
+  ];
+
+  let favorites = JSON.parse(localStorage.getItem('techFavs')) || new Array(vocabList.length).fill(false);
+  let currentCard = 0;
+  let quizIndex = 0;
+  let score = 0;
+  let quizQuestions = [];
+  let wrongItems = [];
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function updateFlashcard() {
+    const item = vocabList[currentCard];
+    document.getElementById('flashWord').innerText = item.word;
+    document.getElementById('flashIpa').innerText = item.ipa;
+    document.getElementById('flashMeaning').innerText = item.meaning;
+    document.getElementById('flashExample').innerText = item.example;
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
+  }
+
+  function renderTable(filter = 'all') {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    vocabList.forEach((item, idx) => {
+      if (filter === 'starred' && !favorites[idx]) return;
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
+    });
+  }
+
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('techFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Flashcard Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  // Filter
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 3; // MC, FitB, Audio
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `Select the correct English term for: "${item.meaning}"`, correct: item.word, options: options.sort() };
+      } else if (type === 1) {
+        return { type: 'fitb', q: `Type the English equivalent of "${item.meaning}":`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen and type exactly what you hear:`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
+    quizQuestions = generateQuiz();
+    quizIndex = 0; score = 0; wrongItems = [];
+    document.getElementById('quizArea').style.display = 'block';
+    document.getElementById('resultArea').style.display = 'none';
+    renderQuizQuestion();
+  };
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Progress: ${quizIndex + 1}/30</h3><p style="font-weight:600; font-size:1.1rem; margin-bottom:15px;">${q.q}</p>`;
+    
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit Answer</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Play Word</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Type what you hear..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Audio</button>`;
+      setTimeout(() => speakText(q.correct), 400);
+    }
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Spot on! Well done.</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct term is: <strong>${q.correct}</strong></p>`;
+    }
+    
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 30) renderQuizQuestion();
+      else showResults();
+    }, 1500);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Tech Quiz Results 📡</h2>
+        <p style="font-size:1.8rem; margin:15px 0;">Final Score: <strong>${score}/30</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:20px; border-radius:20px; margin-top:15px; border: 1px solid #e1f5fe;">
+            <h4 style="color:#0277bd; margin-top:0;">Terms to Review:</h4>
+            <ul style="padding-left:20px; margin-bottom:0;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (Typed: <span style="color:#888; text-decoration:line-through;">${w.user || '[blank]'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#2e7d32; font-weight:bold; font-size: 1.3rem;">Incredible! You are a true Tech Guru!</p>'}
+        <button onclick="location.reload()" style="margin-top:25px;">Retake Quiz</button>
+      </div>`;
+  }
+
+  // Init
+  updateFlashcard();
+  renderTable();
+</script>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Vocabulary" /><category term="technology" /><category term="ielts-speaking" /><category term="digital-age" /><category term="interactive" /><summary type="html"><![CDATA[Master 30 sophisticated tech-related words, collocations, and phrasal verbs for IELTS Speaking Band 7.0+.]]></summary></entry><entry><title type="html">🌱 Gardening Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/gardening-vocabulary-flashcard-quiz/" rel="alternate" type="text/html" title="🌱 Gardening Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/gardening-vocabulary-flashcard-quiz</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/gardening-vocabulary-flashcard-quiz/"><![CDATA[<style>
+  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
+  .vocab-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    display: inline-block;
+    padding: 0 0.5rem 0.2rem;
+    border-radius: 20px;
+    margin: 1.5rem 0 1rem;
+  }
+  .pastel-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button, .filter-btn {
+    background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #5a3e7c;
+    margin: 5px;
+  }
+  button:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    transform: scale(1.02);
+  }
+  /* ========== FLASHCARD 3D (UPDATED SIZE) ========== */
+  .flashcard-area {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 650px; /* Tăng chiều rộng */
+    height: 400px;    /* Tăng chiều cao */
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fef5f7); }
+  .flip-card-back {
+    background: linear-gradient(145deg, #f0f7ff, #ffffff);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #333; } /* Chữ nhỏ lại */
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #f5576c; margin-bottom: 1rem; } /* Chữ nhỏ lại */
+  .flash-example { font-size: 0.95rem; line-height: 1.5; background: #f9f3ff; padding: 1rem; border-radius: 20px; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
+
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+  }
+  .vocab-table th, .vocab-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border: 1px solid #e6d9f0;
+  }
+  .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
+
+  /* ========== QUIZ ========== */
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; }
+  .quiz-option:hover { background: #e0d8ff; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; outline: none; text-align: center; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
+  .correct { color: #28a745; }
+  .wrong { color: #dc3545; }
+  .audio-quiz-btn { font-size: 1.5rem; margin-bottom: 1rem; padding: 10px 25px; }
+</style>
+
+<div class="vocab-container" id="vocabApp">
+  <h1>🌱 Gardening Vocabulary</h1>
+  <p>Learn 20 essential words for IELTS 7.0+. Master them through flashcards, table, and interactive quiz.</p>
+
+  <h2>📇 Flashcards</h2>
+  <div class="flashcard-area">
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="flash-word" id="flashWord"></div>
+          <div class="flash-ipa" id="flashIpa"></div>
+          <button id="playFlashAudio">🔊 Play word</button>
+          <p style="font-size:0.8rem; margin-top:20px; color: #aaa;">👆 Tap to flip</p>
+        </div>
+        <div class="flip-card-back">
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-example" id="flashExample"></div>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Play example</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-controls">
+    <button id="prevCardBtn">◀ Previous</button>
+    <button id="nextCardBtn">Next ▶</button>
+  </div>
+  <div class="progress-bar" id="flashProgress"></div>
+
+  <h2>📋 Vocabulary Table</h2>
+  <div class="filter-group">
+    <button id="filterAllBtn" class="filter-btn active">All Words</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example</th>
+          <th>⭐</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <h2>📝 Quiz</h2>
+  <button id="startQuizBtn">🌱 Start Mixed Quiz (20 questions)</button>
+  <div id="quizArea" style="display:none; margin-top: 20px;">
+    <div id="quizContainer"></div>
+  </div>
+  <div id="resultArea" style="display:none; margin-top: 20px;"></div>
+</div>
+
+<script>
+  const vocabList = [
+    { word: "green thumb", ipa: "/ɡriːn θʌm/", meaning: "khiếu làm vườn", example: "My grandmother has a real green thumb; she can make almost any plant thrive." },
+    { word: "germinate", ipa: "/ˈdʒɜːmɪneɪt/", meaning: "nảy mầm", example: "Seeds require the right balance of moisture and warmth to germinate successfully." },
+    { word: "cultivate", ipa: "/ˈkʌltɪveɪt/", meaning: "trồng trọt, canh tác", example: "Many people today choose to cultivate their own vegetables to ensure they are organic." },
+    { word: "prune", ipa: "/pruːn/", meaning: "tỉa cành", example: "It is essential to prune the rose bushes in early spring to encourage new growth." },
+    { word: "sprout up", ipa: "/spraʊt ʌp/", meaning: "mọc lên nhanh chóng", example: "After the first spring rain, tiny green shoots began to sprout up all over the garden." },
+    { word: "nutrient-rich soil", ipa: "/ˈnjuːtriənt rɪtʃ sɔɪl/", meaning: "đất giàu dinh dưỡng", example: "Lush gardens are usually the result of planting in nutrient-rich soil." },
+    { word: "wither away", ipa: "/ˈwɪðər əˈweɪ/", meaning: "héo úa, tàn lụi", example: "If you neglect your indoor plants during the summer, they will quickly wither away." },
+    { word: "hardy", ipa: "/ˈhɑːrdi/", meaning: "chịu đựng tốt", example: "Lavender is a hardy plant that can survive even in very poor soil conditions." },
+    { word: "take root", ipa: "/teɪk ruːt/", meaning: "bén rễ", example: "It takes about two weeks for the cuttings to take root in the new compost." },
+    { word: "perennial", ipa: "/pəˈreniəl/", meaning: "cây lâu năm", example: "I prefer perennials over annuals because they bloom year after year." },
+    { word: "pot on", ipa: "/pɒt ɒn/", meaning: "chuyển cây sang chậu lớn", example: "The seedlings have grown significantly, so I need to pot them on this weekend." },
+    { word: "in full bloom", ipa: "/ɪn fʊl bluːm/", meaning: "nở rộ", example: "The botanical garden is breathtaking when the cherry blossoms are in full bloom." },
+    { word: "pest control", ipa: "/pest kənˈtrəʊl/", meaning: "kiểm soát sâu bệnh", example: "Organic gardeners often use natural predators like ladybugs for pest control." },
+    { word: "lush vegetation", ipa: "/lʌʃ ˌvedʒɪˈteɪʃn/", meaning: "thảm thực vật tươi tốt", example: "The tropical region is known for its lush vegetation and high biodiversity." },
+    { word: "die back", ipa: "/daɪ bæk/", meaning: "héo đi (gốc vẫn sống)", example: "Don't worry if the lilies die back in winter; they will return in the spring." },
+    { word: "sow the seeds", ipa: "/səʊ ðə siːdz/", meaning: "gieo hạt", example: "April is the ideal month to sow the seeds for your summer vegetable patch." },
+    { word: "drainage", ipa: "/ˈdreɪnɪdʒ/", meaning: "sự thoát nước", example: "Poor drainage can lead to root rot, which is fatal for most potted plants." },
+    { word: "thrive", ipa: "/θraɪv/", meaning: "phát triển mạnh mẽ", example: "Succulents thrive in bright sunlight and require very little maintenance." },
+    { word: "fragrant", ipa: "/ˈfreɪɡrənt/", meaning: "thơm ngát", example: "I planted jasmine near the window so its fragrant scent could drift into the house." },
+    { word: "drought-resistant", ipa: "/draʊt rɪˈzɪstənt/", meaning: "chịu hạn", example: "Many Australian native plants are drought-resistant, perfect for dry climates." }
+  ];
+
+  let favorites = JSON.parse(localStorage.getItem('gardeningFavs')) || new Array(vocabList.length).fill(false);
+  let currentCard = 0;
+  let quizIndex = 0;
+  let score = 0;
+  let quizQuestions = [];
+  let wrongItems = [];
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function updateFlashcard() {
+    const item = vocabList[currentCard];
+    document.getElementById('flashWord').innerText = item.word;
+    document.getElementById('flashIpa').innerText = item.ipa;
+    document.getElementById('flashMeaning').innerText = item.meaning;
+    document.getElementById('flashExample').innerText = item.example;
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
+  }
+
+  function renderTable(filter = 'all') {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    vocabList.forEach((item, idx) => {
+      if (filter === 'starred' && !favorites[idx]) return;
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
+    });
+  }
+
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('gardeningFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Flashcard Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  // Filter Controls
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic (Updated with Audio type)
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 3; // 0: MC, 1: Typing (Translate), 2: Audio (Listening)
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
+      } else if (type === 1) {
+        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen and type the word you hear:`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
+    quizQuestions = generateQuiz();
+    quizIndex = 0; score = 0; wrongItems = [];
+    document.getElementById('quizArea').style.display = 'block';
+    document.getElementById('resultArea').style.display = 'none';
+    renderQuizQuestion();
+  };
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
+    
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Replay Audio</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Answer</button>`;
+      // Tự động phát lần đầu cho loại audio
+      setTimeout(() => speakText(q.correct), 300);
+    }
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Excellent! Correct answer.</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct answer was: <strong>${q.correct}</strong></p>`;
+    }
+    
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 20) renderQuizQuestion();
+      else showResults();
+    }, 1500);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Quiz Complete! 🌱</h2>
+        <p style="font-size:1.5rem; margin:15px 0;">Final Score: <strong>${score}/20</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:15px; border-radius:15px; margin-top:15px;">
+            <h4 style="color:#f5576c;">Words to review:</h4>
+            <ul style="padding-left:20px;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (You typed: <span style="text-decoration:line-through; color:#888;">${w.user || '[empty]'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#28a745; font-weight:bold;">Perfect score! You are a master gardener!</p>'}
+        <button onclick="location.reload()" style="margin-top:20px;">Try Again</button>
+      </div>`;
+  }
+
+  // Init
+  updateFlashcard();
+  renderTable();
+</script>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Vocabulary" /><category term="gardening" /><category term="flashcards" /><category term="quiz" /><category term="interactive" /><summary type="html"><![CDATA[Learn 20 gardening words with interactive flashcards, a sortable table, and a mixed‑type quiz.]]></summary></entry><entry><title type="html">🌸 Elegant Flower Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/flower/" rel="alternate" type="text/html" title="🌸 Elegant Flower Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/flower</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/flower/"><![CDATA[<style>
+  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
+  .vocab-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    display: inline-block;
+    padding: 0 0.5rem 0.2rem;
+    border-radius: 20px;
+    margin: 1.5rem 0 1rem;
+  }
+  .pastel-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button, .filter-btn {
+    background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #5a3e7c;
+    margin: 5px;
+  }
+  button:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    transform: scale(1.02);
+  }
+
+  /* ========== FLASHCARD 3D (LARGE & BALANCED) ========== */
+  .flashcard-area {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fdf8ff); }
+  .flip-card-back {
+    background: linear-gradient(145deg, #fff0f5, #ffffff);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #4a148c; }
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; margin-bottom: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #d81b60; margin-bottom: 1.5rem; }
+  .flash-example { font-size: 1rem; line-height: 1.6; background: #fff9fc; padding: 1.2rem; border-radius: 20px; color: #444; border: 1px dashed #ffd1dc; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; color: #666; }
+
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+  }
+  .vocab-table th, .vocab-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #f3e5f5;
+  }
+  .vocab-table th { background: #f3e5f5; color: #4a148c; font-weight: 700; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
+
+  /* ========== QUIZ ========== */
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #fff0f5; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; border: 1px solid transparent; }
+  .quiz-option:hover { background: #ffe4ef; border-color: #fbc2eb; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 2px solid #f3e5f5; margin: 10px 0; outline: none; text-align: center; font-size: 1.1rem; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; font-size: 1.1rem; }
+  .correct { color: #2e7d32; }
+  .wrong { color: #c62828; }
+  .audio-quiz-btn { font-size: 1.4rem; margin-bottom: 1rem; padding: 12px 30px; border: 2px solid #fbc2eb; }
+</style>
+
+<div class="vocab-container" id="vocabApp">
+  <h1>🌸 Elegant Flower Vocabulary</h1>
+  <p>Enhance your IELTS Speaking with these sophisticated flower terms, collocations, and phrasal verbs.</p>
+
+  <h2>📇 Flashcards</h2>
+  <div class="flashcard-area">
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="flash-word" id="flashWord"></div>
+          <div class="flash-ipa" id="flashIpa"></div>
+          <button id="playFlashAudio">🔊 Play Pronunciation</button>
+          <p style="font-size:0.85rem; margin-top:25px; color: #bbb;">👆 Click card to reveal meaning</p>
+        </div>
+        <div class="flip-card-back">
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-example" id="flashExample"></div>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Listen to Example</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-controls">
+    <button id="prevCardBtn">◀ Prev</button>
+    <button id="nextCardBtn">Next ▶</button>
+  </div>
+  <div class="progress-bar" id="flashProgress"></div>
+
+  <h2>📋 Vocabulary Table</h2>
+  <div class="filter-group">
+    <button id="filterAllBtn" class="filter-btn active">All Blooms</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Favourites</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Word / Phrase</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example Sentence</th>
+          <th>⭐</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <h2>📝 Mastery Quiz</h2>
+  <button id="startQuizBtn">🌸 Start Mixed Quiz (20 Questions)</button>
+  <div id="quizArea" style="display:none; margin-top: 25px;">
+    <div id="quizContainer"></div>
+  </div>
+  <div id="resultArea" style="display:none; margin-top: 25px;"></div>
+</div>
+
+<script>
+  const vocabList = [
+    { word: "in full bloom", ipa: "/ɪn fʊl bluːm/", meaning: "nở rộ", example: "The garden is absolutely breathtaking when the roses are in full bloom." },
+    { word: "fragrant", ipa: "/ˈfreɪɡrənt/", meaning: "thơm ngát", example: "I love filling my room with fragrant lilies to create a relaxing atmosphere." },
+    { word: "vibrant", ipa: "/ˈvaɪbrənt/", meaning: "rực rỡ (màu sắc)", example: "The park was filled with vibrant tulips of every imaginable color." },
+    { word: "wither away", ipa: "/ˈwɪðər əˈweɪ/", meaning: "héo úa, tàn lụi", example: "Without enough water, these delicate petals will soon wither away." },
+    { word: "give off", ipa: "/ɡɪv ɒf/", meaning: "tỏa ra (mùi hương)", example: "Night-blooming jasmine gives off an incredibly sweet scent after sunset." },
+    { word: "seasonal blooms", ipa: "/ˈsiːzənl bluːmz/", meaning: "hoa theo mùa", example: "I prefer buying seasonal blooms as they are more sustainable and fresh." },
+    { word: "floral arrangement", ipa: "/ˈflɔːrəl əˈreɪndʒmənt/", meaning: "sắp xếp/cắm hoa", example: "She created a stunning floral arrangement for the wedding centerpiece." },
+    { word: "delicate", ipa: "/ˈdelɪkət/", meaning: "mỏng manh, tinh tế", example: "Cherry blossoms are known for their delicate beauty and short lifespan." },
+    { word: "cut back", ipa: "/kʌt bæk/", meaning: "tỉa bớt", example: "You should cut back the lavender after it finishes flowering to keep it tidy." },
+    { word: "spring up", ipa: "/sprɪŋ ʌp/", meaning: "mọc lên nhanh chóng", example: "Wildflowers began to spring up all over the meadows as soon as the weather warmed." },
+    { word: "perennial", ipa: "/pəˈreniəl/", meaning: "cây hoa lâu năm", example: "Perennials are a great investment because they come back year after year." },
+    { word: "bouquet", ipa: "/buˈkeɪ/", meaning: "bó hoa", example: "He presented her with a massive bouquet of sun-drenched sunflowers." },
+    { word: "exotic flowers", ipa: "/ɪɡˈzɒtɪk ˈflaʊərz/", meaning: "hoa ngoại nhập/kỳ lạ", example: "The botanical garden features a section dedicated to rare and exotic flowers." },
+    { word: "petal", ipa: "/ˈpetl/", meaning: "cánh hoa", example: "The soft pink petals of the peony fell gently onto the grass." },
+    { word: "die back", ipa: "/daɪ bæk/", meaning: "héo đi (nhưng rễ vẫn sống)", example: "Many bulb plants die back in autumn and remain dormant until spring." },
+    { word: "stunning", ipa: "/ˈstʌnɪŋ/", meaning: "đẹp lộng lẫy", example: "The orchid display at the show was absolutely stunning." },
+    { word: "nectar", ipa: "/ˈnektə(r)/", meaning: "mật hoa", example: "Bees and butterflies are attracted to flowers that produce high amounts of nectar." },
+    { word: "blossom", ipa: "/ˈblɒsəm/", meaning: "hoa (thường là hoa cây ăn quả)", example: "The apple trees are covered in white blossom this time of year." },
+    { word: "long-lasting", ipa: "/ˌlɒŋ ˈlɑːstɪŋ/", meaning: "tươi lâu", example: "Carnations are popular for bouquets because they are remarkably long-lasting." },
+    { word: "symbolize", ipa: "/ˈsɪmbəlaɪz/", meaning: "tượng trưng cho", example: "In many cultures, white lilies symbolize purity and rebirth." }
+  ];
+
+  let favorites = JSON.parse(localStorage.getItem('flowerFavs')) || new Array(vocabList.length).fill(false);
+  let currentCard = 0;
+  let quizIndex = 0;
+  let score = 0;
+  let quizQuestions = [];
+  let wrongItems = [];
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function updateFlashcard() {
+    const item = vocabList[currentCard];
+    document.getElementById('flashWord').innerText = item.word;
+    document.getElementById('flashIpa').innerText = item.ipa;
+    document.getElementById('flashMeaning').innerText = item.meaning;
+    document.getElementById('flashExample').innerText = item.example;
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
+  }
+
+  function renderTable(filter = 'all') {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    vocabList.forEach((item, idx) => {
+      if (filter === 'starred' && !favorites[idx]) return;
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
+    });
+  }
+
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('flowerFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 3; // MC, Typing, Audio
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `What is the English term for "${item.meaning}"?`, correct: item.word, options: options.sort() };
+      } else if (type === 1) {
+        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen carefully and type the word:`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
+    quizQuestions = generateQuiz();
+    quizIndex = 0; score = 0; wrongItems = [];
+    document.getElementById('quizArea').style.display = 'block';
+    document.getElementById('resultArea').style.display = 'none';
+    renderQuizQuestion();
+  };
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
+    
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Type answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Play Sound</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Verify</button>`;
+      setTimeout(() => speakText(q.correct), 400);
+    }
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Brilliant! That's correct.</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Not quite. The word was: <strong>${q.correct}</strong></p>`;
+    }
+    
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 20) renderQuizQuestion();
+      else showResults();
+    }, 1500);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Floral Quiz Results 🌸</h2>
+        <p style="font-size:1.6rem; margin:15px 0;">Score: <strong>${score}/20</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:20px; border-radius:20px; margin-top:15px; border: 1px solid #f3e5f5;">
+            <h4 style="color:#d81b60; margin-top:0;">Keep practicing these:</h4>
+            <ul style="padding-left:20px; margin-bottom:0;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (Typed: <span style="color:#888; text-decoration:line-through;">${w.user || 'nothing'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#2e7d32; font-weight:bold; font-size: 1.2rem;">Flawless! Your flower vocabulary is Band 9.0!</p>'}
+        <button onclick="location.reload()" style="margin-top:25px;">Restart Quiz</button>
+      </div>`;
+  }
+
+  // Initial load
+  updateFlashcard();
+  renderTable();
+</script>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Vocabulary" /><category term="flowers" /><category term="ielts-speaking" /><category term="vocabulary" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 sophisticated flower-related words and idioms for IELTS Speaking Band 7.0+ with our interactive tools.]]></summary></entry><entry><title type="html">🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/animals/" rel="alternate" type="text/html" title="🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/animals</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/animals/"><![CDATA[<style>
+  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
+  .vocab-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  h2 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    display: inline-block;
+    padding: 0 0.5rem 0.2rem;
+    border-radius: 20px;
+    margin: 1.5rem 0 1rem;
+  }
+  .pastel-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    padding: 1.2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  button, .filter-btn {
+    background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #5a3e7c;
+    margin: 5px;
+  }
+  button:hover, .filter-btn.active {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    color: white;
+    transform: scale(1.02);
+  }
+  /* ========== FLASHCARD 3D (LARGE SIZE) ========== */
+  .flashcard-area {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .flip-card {
+    background-color: transparent;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 28px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+  }
+  .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 28px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fef5f7); }
+  .flip-card-back {
+    background: linear-gradient(145deg, #f0f7ff, #ffffff);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+  }
+  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #333; }
+  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; }
+  .flash-meaning { font-size: 1.3rem; color: #f5576c; margin-bottom: 1rem; }
+  .flash-example { font-size: 0.95rem; line-height: 1.5; background: #f9f3ff; padding: 1rem; border-radius: 20px; }
+  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
+  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
+
+  /* ========== VOCABULARY TABLE ========== */
+  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
+  .vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+  }
+  .vocab-table th, .vocab-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border: 1px solid #e6d9f0;
+  }
+  .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
+  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
+  .star-btn.active { color: #f5576c; }
+
+  /* ========== QUIZ ========== */
+  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
+  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; }
+  .quiz-option:hover { background: #e0d8ff; }
+  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; outline: none; text-align: center; }
+  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
+  .correct { color: #28a745; }
+  .wrong { color: #dc3545; }
+  .audio-quiz-btn { font-size: 1.5rem; margin-bottom: 1rem; padding: 10px 25px; }
+</style>
+
+<div class="vocab-container" id="vocabApp">
+  <h1>🐾 Animals &amp; Wildlife Vocabulary</h1>
+  <p>Boost your IELTS score with 20 natural animal-related words and phrases. Use these interactive tools to memorize them efficiently.</p>
+
+  <h2>📇 Flashcards</h2>
+  <div class="flashcard-area">
+    <div class="flip-card" id="flipCard">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="flash-word" id="flashWord"></div>
+          <div class="flash-ipa" id="flashIpa"></div>
+          <button id="playFlashAudio">🔊 Play word</button>
+          <p style="font-size:0.8rem; margin-top:20px; color: #aaa;">👆 Tap to flip</p>
+        </div>
+        <div class="flip-card-back">
+          <div class="flash-meaning" id="flashMeaning"></div>
+          <div class="flash-example" id="flashExample"></div>
+          <button id="playExampleAudio" style="margin-top:15px;">🔊 Play example</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-controls">
+    <button id="prevCardBtn">◀ Previous</button>
+    <button id="nextCardBtn">Next ▶</button>
+  </div>
+  <div class="progress-bar" id="flashProgress"></div>
+
+  <h2>📋 Vocabulary Table</h2>
+  <div class="filter-group">
+    <button id="filterAllBtn" class="filter-btn active">All Words</button>
+    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="vocab-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Word</th>
+          <th>IPA</th>
+          <th>Audio</th>
+          <th>Meaning</th>
+          <th>Example</th>
+          <th>⭐</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <h2>📝 Quiz</h2>
+  <button id="startQuizBtn">🐾 Start Mixed Quiz (20 questions)</button>
+  <div id="quizArea" style="display:none; margin-top: 20px;">
+    <div id="quizContainer"></div>
+  </div>
+  <div id="resultArea" style="display:none; margin-top: 20px;"></div>
+</div>
+
+<script>
+  const vocabList = [
+    { word: "biodiversity", ipa: "/ˌbaɪəʊdaɪˈvɜːsəti/", meaning: "đa dạng sinh học", example: "The Amazon rainforest is famous for its incredible biodiversity." },
+    { word: "endangered species", ipa: "/ɪnˈdeɪndʒəd ˈspiːʃiːz/", meaning: "loài đang gặp nguy hiểm", example: "Tigers are now an endangered species due to illegal hunting and habitat loss." },
+    { word: "natural habitat", ipa: "/ˈnætʃrəl ˈhæbɪtæt/", meaning: "môi trường sống tự nhiên", example: "It's much better to see animals in their natural habitat than in small cages." },
+    { word: "nocturnal", ipa: "/nɒkˈtɜːnl/", meaning: "hoạt động về đêm", example: "Owls are nocturnal creatures that hunt for food when it gets dark." },
+    { word: "apex predator", ipa: "/ˈeɪpeks ˈpredətə(r)/", meaning: "động vật ăn thịt đầu bảng", example: "The great white shark is a formidable apex predator of the ocean." },
+    { word: "domesticated", ipa: "/dəˈmestɪkeɪtɪd/", meaning: "đã được thuần hóa", example: "Dogs were one of the first animals to be domesticated by humans." },
+    { word: "die out", ipa: "/daɪ aʊt/", meaning: "tuyệt chủng/dần mất đi", example: "Dinosaurs died out millions of years ago after a massive asteroid hit Earth." },
+    { word: "feed on", ipa: "/fiːd ɒn/", meaning: "ăn (thứ gì đó)", example: "Cows mostly feed on grass and clover found in the pastures." },
+    { word: "in the wild", ipa: "/ɪn ðə waɪld/", meaning: "trong môi trường hoang dã", example: "There are only a few thousand giant pandas left living in the wild." },
+    { word: "stray", ipa: "/streɪ/", meaning: "động vật bị lạc/vô chủ", example: "The city has set up a shelter to take care of stray cats and dogs." },
+    { word: "conservation", ipa: "/ˌkɒnsəˈveɪʃn/", meaning: "sự bảo tồn", example: "Wildlife conservation is essential to protect our planet's ecosystems." },
+    { word: "bring up", ipa: "/brɪŋ ʌp/", meaning: "nuôi nấng/chăm sóc", example: "She brought up the orphaned cub until it was strong enough to return to the forest." },
+    { word: "marine life", ipa: "/məˈriːn laɪf/", meaning: "sinh vật biển", example: "Pollution in the oceans is causing serious harm to marine life." },
+    { word: "take after", ipa: "/teɪk ˈɑːftə(r)/", meaning: "giống (ai/cái gì)", example: "This puppy really takes after its mother in terms of its calm temperament." },
+    { word: "migrate", ipa: "/maɪˈɡreɪt/", meaning: "di cư", example: "Many species of birds migrate south to escape the harsh winter cold." },
+    { word: "bond with", ipa: "/bɒnd wɪð/", meaning: "hình thành mối liên kết với", example: "It takes time for a rescued pet to bond with its new owner." },
+    { word: "poach", ipa: "/pəʊtʃ/", meaning: "săn bắn trộm", example: "Elephants are often poached for their ivory tusks, which is a tragedy." },
+    { word: "territorial", ipa: "/ˌterəˈtɔːriəl/", meaning: "có tính bảo vệ lãnh thổ", example: "Some male animals become very territorial during the mating season." },
+    { word: "cope with", ipa: "/kəʊp wɪð/", meaning: "đối mặt/thích nghi với", example: "Desert animals have evolved special ways to cope with the extreme heat." },
+    { word: "keep an eye on", ipa: "/kiːp ən aɪ ɒn/", meaning: "theo dõi/quan sát kỹ", example: "The zookeeper needs to keep an eye on the newborn giraffe to ensure it's healthy." }
+  ];
+
+  let favorites = JSON.parse(localStorage.getItem('animalFavs')) || new Array(vocabList.length).fill(false);
+  let currentCard = 0;
+  let quizIndex = 0;
+  let score = 0;
+  let quizQuestions = [];
+  let wrongItems = [];
+
+  function speakText(text) {
+    if (!window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function updateFlashcard() {
+    const item = vocabList[currentCard];
+    document.getElementById('flashWord').innerText = item.word;
+    document.getElementById('flashIpa').innerText = item.ipa;
+    document.getElementById('flashMeaning').innerText = item.meaning;
+    document.getElementById('flashExample').innerText = item.example;
+    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
+    document.getElementById('flipCard').classList.remove('flipped');
+  }
+
+  function renderTable(filter = 'all') {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    vocabList.forEach((item, idx) => {
+      if (filter === 'starred' && !favorites[idx]) return;
+      const row = tbody.insertRow();
+      row.innerHTML = `
+        <td>${idx + 1}</td>
+        <td><strong>${item.word}</strong></td>
+        <td>${item.ipa}</td>
+        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
+        <td>${item.meaning}</td>
+        <td>${item.example}</td>
+        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
+      `;
+    });
+  }
+
+  window.toggleStar = function(idx, btn) {
+    favorites[idx] = !favorites[idx];
+    localStorage.setItem('animalFavs', JSON.stringify(favorites));
+    btn.classList.toggle('active');
+    btn.innerText = favorites[idx] ? '⭐' : '☆';
+    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
+      renderTable('starred');
+    }
+  };
+
+  // Flashcard Controls
+  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
+  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
+  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
+  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
+  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
+
+  // Filter Controls
+  document.getElementById('filterAllBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterStarBtn').classList.remove('active');
+    renderTable('all');
+  };
+  document.getElementById('filterStarBtn').onclick = function() {
+    this.classList.add('active');
+    document.getElementById('filterAllBtn').classList.remove('active');
+    renderTable('starred');
+  };
+
+  // Quiz Logic
+  function generateQuiz() {
+    let qs = vocabList.map((item, i) => {
+      const type = i % 3; // 0: MC, 1: Typing, 2: Audio
+      if (type === 0) {
+        let options = [item.word];
+        while (options.length < 4) {
+          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
+          if (!options.includes(r)) options.push(r);
+        }
+        return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
+      } else if (type === 1) {
+        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
+      } else {
+        return { type: 'audio', q: `Listen and type the word you hear:`, correct: item.word };
+      }
+    });
+    return qs.sort(() => Math.random() - 0.5);
+  }
+
+  document.getElementById('startQuizBtn').onclick = () => {
+    quizQuestions = generateQuiz();
+    quizIndex = 0; score = 0; wrongItems = [];
+    document.getElementById('quizArea').style.display = 'block';
+    document.getElementById('resultArea').style.display = 'none';
+    renderQuizQuestion();
+  };
+
+  function renderQuizQuestion() {
+    const q = quizQuestions[quizIndex];
+    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
+    
+    if (q.type === 'mc') {
+      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
+    } else if (q.type === 'fitb') {
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit</button>`;
+    } else if (q.type === 'audio') {
+      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Replay Audio</button><br>`;
+      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Answer</button>`;
+      setTimeout(() => speakText(q.correct), 300);
+    }
+    
+    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
+    document.getElementById('quizContainer').innerHTML = html;
+    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
+  }
+
+  window.checkAnswer = function(ans) {
+    const q = quizQuestions[quizIndex];
+    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
+    const feedback = document.getElementById('quizFeedback');
+    
+    if (isCorrect) {
+      score++;
+      feedback.innerHTML = `<p class="correct">✔ Excellent! Correct answer.</p>`;
+    } else {
+      wrongItems.push({ q: q.correct, user: ans });
+      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct answer was: <strong>${q.correct}</strong></p>`;
+    }
+    
+    setTimeout(() => {
+      quizIndex++;
+      if (quizIndex < 20) renderQuizQuestion();
+      else showResults();
+    }, 1500);
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    const res = document.getElementById('resultArea');
+    res.style.display = 'block';
+    res.innerHTML = `
+      <div class="pastel-card" style="text-align:center;">
+        <h2>Quiz Complete! 🐾</h2>
+        <p style="font-size:1.5rem; margin:15px 0;">Final Score: <strong>${score}/20</strong></p>
+        ${wrongItems.length > 0 ? `
+          <div style="text-align:left; background:#fff; padding:15px; border-radius:15px; margin-top:15px;">
+            <h4 style="color:#f5576c;">Words to review:</h4>
+            <ul style="padding-left:20px;">
+              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (You typed: <span style="text-decoration:line-through; color:#888;">${w.user || '[empty]'}</span>)</li>`).join('')}
+            </ul>
+          </div>` : '<p style="color:#28a745; font-weight:bold;">Perfect score! You are an animal expert!</p>'}
+        <button onclick="location.reload()" style="margin-top:20px;">Try Again</button>
+      </div>`;
+  }
+
+  // Init
+  updateFlashcard();
+  renderTable();
+</script>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Vocabulary" /><category term="animals" /><category term="wildlife" /><category term="ielts-speaking" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 animal-related words and phrases for IELTS Speaking Band 7.0+ with interactive tools.]]></summary></entry><entry><title type="html">🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/vocabulary/technology/" rel="alternate" type="text/html" title="🚀 Cutting-Edge Technology Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/vocabulary/technology</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/vocabulary/technology/"><![CDATA[<style>
   /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
   .vocab-container {
     max-width: 1300px;
@@ -1111,428 +2958,7 @@
   // Initial load
   updateFlashcard();
   renderTable();
-</script>]]></content><author><name></name></author><category term="Vocabulary" /><category term="flowers" /><category term="ielts-speaking" /><category term="vocabulary" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 sophisticated flower-related words and idioms for IELTS Speaking Band 7.0+ with our interactive tools.]]></summary></entry><entry><title type="html">🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/vocabulary/animals/" rel="alternate" type="text/html" title="🐾 Animals &amp;amp; Wildlife Vocabulary: Flashcards, Table &amp;amp; Quiz" /><published>2026-04-20T00:00:00+07:00</published><updated>2026-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/vocabulary/animals</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/vocabulary/animals/"><![CDATA[<style>
-  /* ========== GLOBAL PASTEL GRADIENT STYLES ========== */
-  .vocab-container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 1rem;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
-  h2 {
-    font-size: 1.8rem;
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    display: inline-block;
-    padding: 0 0.5rem 0.2rem;
-    border-radius: 20px;
-    margin: 1.5rem 0 1rem;
-  }
-  .pastel-card {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(4px);
-    border-radius: 32px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
-    padding: 1.2rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  button, .filter-btn {
-    background: linear-gradient(135deg, #f9f0ff, #ffe4f0);
-    border: none;
-    border-radius: 60px;
-    padding: 0.5rem 1.2rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: #5a3e7c;
-    margin: 5px;
-  }
-  button:hover, .filter-btn.active {
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
-    color: white;
-    transform: scale(1.02);
-  }
-  /* ========== FLASHCARD 3D (LARGE SIZE) ========== */
-  .flashcard-area {
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-  }
-  .flip-card {
-    background-color: transparent;
-    width: 100%;
-    max-width: 650px;
-    height: 400px;
-    perspective: 1000px;
-    cursor: pointer;
-  }
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    border-radius: 28px;
-    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
-  }
-  .flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 28px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: white;
-  }
-  .flip-card-front { background: linear-gradient(145deg, #ffffff, #fef5f7); }
-  .flip-card-back {
-    background: linear-gradient(145deg, #f0f7ff, #ffffff);
-    transform: rotateY(180deg);
-    overflow-y: auto;
-  }
-  .flash-word { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: #333; }
-  .flash-ipa { font-family: monospace; color: #888; font-size: 1rem; }
-  .flash-meaning { font-size: 1.3rem; color: #f5576c; margin-bottom: 1rem; }
-  .flash-example { font-size: 0.95rem; line-height: 1.5; background: #f9f3ff; padding: 1rem; border-radius: 20px; }
-  .card-controls { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-  .progress-bar { text-align: center; font-weight: 500; margin-top: 10px; }
-
-  /* ========== VOCABULARY TABLE ========== */
-  .table-wrapper { overflow-x: auto; margin-top: 1rem; }
-  .vocab-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    font-size: 0.85rem;
-  }
-  .vocab-table th, .vocab-table td {
-    padding: 12px 10px;
-    text-align: left;
-    border: 1px solid #e6d9f0;
-  }
-  .vocab-table th { background: #f9f0ff; color: #5a3e7c; }
-  .star-btn { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: #ccc; }
-  .star-btn.active { color: #f5576c; }
-
-  /* ========== QUIZ ========== */
-  .quiz-options { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin: 20px 0; }
-  .quiz-option { background: #f3f0ff; padding: 12px; border-radius: 60px; cursor: pointer; text-align: center; transition: 0.2s; }
-  .quiz-option:hover { background: #e0d8ff; }
-  .quiz-input { width: 100%; padding: 12px; border-radius: 60px; border: 1px solid #ddd; margin: 10px 0; outline: none; text-align: center; }
-  .quiz-feedback { margin-top: 20px; font-weight: bold; text-align: center; }
-  .correct { color: #28a745; }
-  .wrong { color: #dc3545; }
-  .audio-quiz-btn { font-size: 1.5rem; margin-bottom: 1rem; padding: 10px 25px; }
-</style>
-
-<div class="vocab-container" id="vocabApp">
-  <h1>🐾 Animals &amp; Wildlife Vocabulary</h1>
-  <p>Boost your IELTS score with 20 natural animal-related words and phrases. Use these interactive tools to memorize them efficiently.</p>
-
-  <h2>📇 Flashcards</h2>
-  <div class="flashcard-area">
-    <div class="flip-card" id="flipCard">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <div class="flash-word" id="flashWord"></div>
-          <div class="flash-ipa" id="flashIpa"></div>
-          <button id="playFlashAudio">🔊 Play word</button>
-          <p style="font-size:0.8rem; margin-top:20px; color: #aaa;">👆 Tap to flip</p>
-        </div>
-        <div class="flip-card-back">
-          <div class="flash-meaning" id="flashMeaning"></div>
-          <div class="flash-example" id="flashExample"></div>
-          <button id="playExampleAudio" style="margin-top:15px;">🔊 Play example</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="card-controls">
-    <button id="prevCardBtn">◀ Previous</button>
-    <button id="nextCardBtn">Next ▶</button>
-  </div>
-  <div class="progress-bar" id="flashProgress"></div>
-
-  <h2>📋 Vocabulary Table</h2>
-  <div class="filter-group">
-    <button id="filterAllBtn" class="filter-btn active">All Words</button>
-    <button id="filterStarBtn" class="filter-btn">⭐ Starred Only</button>
-  </div>
-  <div class="table-wrapper">
-    <table class="vocab-table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Word</th>
-          <th>IPA</th>
-          <th>Audio</th>
-          <th>Meaning</th>
-          <th>Example</th>
-          <th>⭐</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
-  </div>
-
-  <h2>📝 Quiz</h2>
-  <button id="startQuizBtn">🐾 Start Mixed Quiz (20 questions)</button>
-  <div id="quizArea" style="display:none; margin-top: 20px;">
-    <div id="quizContainer"></div>
-  </div>
-  <div id="resultArea" style="display:none; margin-top: 20px;"></div>
-</div>
-
-<script>
-  const vocabList = [
-    { word: "biodiversity", ipa: "/ˌbaɪəʊdaɪˈvɜːsəti/", meaning: "đa dạng sinh học", example: "The Amazon rainforest is famous for its incredible biodiversity." },
-    { word: "endangered species", ipa: "/ɪnˈdeɪndʒəd ˈspiːʃiːz/", meaning: "loài đang gặp nguy hiểm", example: "Tigers are now an endangered species due to illegal hunting and habitat loss." },
-    { word: "natural habitat", ipa: "/ˈnætʃrəl ˈhæbɪtæt/", meaning: "môi trường sống tự nhiên", example: "It's much better to see animals in their natural habitat than in small cages." },
-    { word: "nocturnal", ipa: "/nɒkˈtɜːnl/", meaning: "hoạt động về đêm", example: "Owls are nocturnal creatures that hunt for food when it gets dark." },
-    { word: "apex predator", ipa: "/ˈeɪpeks ˈpredətə(r)/", meaning: "động vật ăn thịt đầu bảng", example: "The great white shark is a formidable apex predator of the ocean." },
-    { word: "domesticated", ipa: "/dəˈmestɪkeɪtɪd/", meaning: "đã được thuần hóa", example: "Dogs were one of the first animals to be domesticated by humans." },
-    { word: "die out", ipa: "/daɪ aʊt/", meaning: "tuyệt chủng/dần mất đi", example: "Dinosaurs died out millions of years ago after a massive asteroid hit Earth." },
-    { word: "feed on", ipa: "/fiːd ɒn/", meaning: "ăn (thứ gì đó)", example: "Cows mostly feed on grass and clover found in the pastures." },
-    { word: "in the wild", ipa: "/ɪn ðə waɪld/", meaning: "trong môi trường hoang dã", example: "There are only a few thousand giant pandas left living in the wild." },
-    { word: "stray", ipa: "/streɪ/", meaning: "động vật bị lạc/vô chủ", example: "The city has set up a shelter to take care of stray cats and dogs." },
-    { word: "conservation", ipa: "/ˌkɒnsəˈveɪʃn/", meaning: "sự bảo tồn", example: "Wildlife conservation is essential to protect our planet's ecosystems." },
-    { word: "bring up", ipa: "/brɪŋ ʌp/", meaning: "nuôi nấng/chăm sóc", example: "She brought up the orphaned cub until it was strong enough to return to the forest." },
-    { word: "marine life", ipa: "/məˈriːn laɪf/", meaning: "sinh vật biển", example: "Pollution in the oceans is causing serious harm to marine life." },
-    { word: "take after", ipa: "/teɪk ˈɑːftə(r)/", meaning: "giống (ai/cái gì)", example: "This puppy really takes after its mother in terms of its calm temperament." },
-    { word: "migrate", ipa: "/maɪˈɡreɪt/", meaning: "di cư", example: "Many species of birds migrate south to escape the harsh winter cold." },
-    { word: "bond with", ipa: "/bɒnd wɪð/", meaning: "hình thành mối liên kết với", example: "It takes time for a rescued pet to bond with its new owner." },
-    { word: "poach", ipa: "/pəʊtʃ/", meaning: "săn bắn trộm", example: "Elephants are often poached for their ivory tusks, which is a tragedy." },
-    { word: "territorial", ipa: "/ˌterəˈtɔːriəl/", meaning: "có tính bảo vệ lãnh thổ", example: "Some male animals become very territorial during the mating season." },
-    { word: "cope with", ipa: "/kəʊp wɪð/", meaning: "đối mặt/thích nghi với", example: "Desert animals have evolved special ways to cope with the extreme heat." },
-    { word: "keep an eye on", ipa: "/kiːp ən aɪ ɒn/", meaning: "theo dõi/quan sát kỹ", example: "The zookeeper needs to keep an eye on the newborn giraffe to ensure it's healthy." }
-  ];
-
-  let favorites = JSON.parse(localStorage.getItem('animalFavs')) || new Array(vocabList.length).fill(false);
-  let currentCard = 0;
-  let quizIndex = 0;
-  let score = 0;
-  let quizQuestions = [];
-  let wrongItems = [];
-
-  function speakText(text) {
-    if (!window.speechSynthesis) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    utterance.rate = 0.85;
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
-  }
-
-  function updateFlashcard() {
-    const item = vocabList[currentCard];
-    document.getElementById('flashWord').innerText = item.word;
-    document.getElementById('flashIpa').innerText = item.ipa;
-    document.getElementById('flashMeaning').innerText = item.meaning;
-    document.getElementById('flashExample').innerText = item.example;
-    document.getElementById('flashProgress').innerText = `${currentCard + 1} / ${vocabList.length}`;
-    document.getElementById('flipCard').classList.remove('flipped');
-  }
-
-  function renderTable(filter = 'all') {
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    vocabList.forEach((item, idx) => {
-      if (filter === 'starred' && !favorites[idx]) return;
-      const row = tbody.insertRow();
-      row.innerHTML = `
-        <td>${idx + 1}</td>
-        <td><strong>${item.word}</strong></td>
-        <td>${item.ipa}</td>
-        <td><button onclick="speakText('${item.word.replace(/'/g, "\\'")}')">🔊</button></td>
-        <td>${item.meaning}</td>
-        <td>${item.example}</td>
-        <td><button class="star-btn ${favorites[idx] ? 'active' : ''}" onclick="toggleStar(${idx}, this)">${favorites[idx] ? '⭐' : '☆'}</button></td>
-      `;
-    });
-  }
-
-  window.toggleStar = function(idx, btn) {
-    favorites[idx] = !favorites[idx];
-    localStorage.setItem('animalFavs', JSON.stringify(favorites));
-    btn.classList.toggle('active');
-    btn.innerText = favorites[idx] ? '⭐' : '☆';
-    if (document.getElementById('filterStarBtn').classList.contains('active') && !favorites[idx]) {
-      renderTable('starred');
-    }
-  };
-
-  // Flashcard Controls
-  document.getElementById('prevCardBtn').onclick = () => { currentCard = (currentCard - 1 + vocabList.length) % vocabList.length; updateFlashcard(); };
-  document.getElementById('nextCardBtn').onclick = () => { currentCard = (currentCard + 1) % vocabList.length; updateFlashcard(); };
-  document.getElementById('flipCard').onclick = () => document.getElementById('flipCard').classList.toggle('flipped');
-  document.getElementById('playFlashAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].word); };
-  document.getElementById('playExampleAudio').onclick = (e) => { e.stopPropagation(); speakText(vocabList[currentCard].example); };
-
-  // Filter Controls
-  document.getElementById('filterAllBtn').onclick = function() {
-    this.classList.add('active');
-    document.getElementById('filterStarBtn').classList.remove('active');
-    renderTable('all');
-  };
-  document.getElementById('filterStarBtn').onclick = function() {
-    this.classList.add('active');
-    document.getElementById('filterAllBtn').classList.remove('active');
-    renderTable('starred');
-  };
-
-  // Quiz Logic
-  function generateQuiz() {
-    let qs = vocabList.map((item, i) => {
-      const type = i % 3; // 0: MC, 1: Typing, 2: Audio
-      if (type === 0) {
-        let options = [item.word];
-        while (options.length < 4) {
-          let r = vocabList[Math.floor(Math.random() * vocabList.length)].word;
-          if (!options.includes(r)) options.push(r);
-        }
-        return { type: 'mc', q: `What is the English word for "${item.meaning}"?`, correct: item.word, options: options.sort() };
-      } else if (type === 1) {
-        return { type: 'fitb', q: `Translate to English: "${item.meaning}"`, correct: item.word };
-      } else {
-        return { type: 'audio', q: `Listen and type the word you hear:`, correct: item.word };
-      }
-    });
-    return qs.sort(() => Math.random() - 0.5);
-  }
-
-  document.getElementById('startQuizBtn').onclick = () => {
-    quizQuestions = generateQuiz();
-    quizIndex = 0; score = 0; wrongItems = [];
-    document.getElementById('quizArea').style.display = 'block';
-    document.getElementById('resultArea').style.display = 'none';
-    renderQuizQuestion();
-  };
-
-  function renderQuizQuestion() {
-    const q = quizQuestions[quizIndex];
-    let html = `<div class="pastel-card" style="text-align:center;"><h3>Question ${quizIndex + 1}/20</h3><p style="font-weight:600; margin-bottom:15px;">${q.q}</p>`;
-    
-    if (q.type === 'mc') {
-      html += `<div class="quiz-options">` + q.options.map(opt => `<div class="quiz-option" onclick="checkAnswer('${opt}')">${opt}</div>`).join('') + `</div>`;
-    } else if (q.type === 'fitb') {
-      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="Your answer..." onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Submit</button>`;
-    } else if (q.type === 'audio') {
-      html += `<button class="audio-quiz-btn" onclick="speakText('${q.correct.replace(/'/g, "\\'")}')">🔊 Replay Audio</button><br>`;
-      html += `<input type="text" id="quizInput" class="quiz-input" placeholder="What did you hear?" onkeydown="if(event.key==='Enter') checkAnswer(this.value)"><br><button onclick="checkAnswer(document.getElementById('quizInput').value)">Check Answer</button>`;
-      setTimeout(() => speakText(q.correct), 300);
-    }
-    
-    html += `<div id="quizFeedback" class="quiz-feedback"></div></div>`;
-    document.getElementById('quizContainer').innerHTML = html;
-    if (document.getElementById('quizInput')) document.getElementById('quizInput').focus();
-  }
-
-  window.checkAnswer = function(ans) {
-    const q = quizQuestions[quizIndex];
-    const isCorrect = ans.trim().toLowerCase() === q.correct.toLowerCase();
-    const feedback = document.getElementById('quizFeedback');
-    
-    if (isCorrect) {
-      score++;
-      feedback.innerHTML = `<p class="correct">✔ Excellent! Correct answer.</p>`;
-    } else {
-      wrongItems.push({ q: q.correct, user: ans });
-      feedback.innerHTML = `<p class="wrong">❌ Incorrect. The correct answer was: <strong>${q.correct}</strong></p>`;
-    }
-    
-    setTimeout(() => {
-      quizIndex++;
-      if (quizIndex < 20) renderQuizQuestion();
-      else showResults();
-    }, 1500);
-  };
-
-  function showResults() {
-    document.getElementById('quizArea').style.display = 'none';
-    const res = document.getElementById('resultArea');
-    res.style.display = 'block';
-    res.innerHTML = `
-      <div class="pastel-card" style="text-align:center;">
-        <h2>Quiz Complete! 🐾</h2>
-        <p style="font-size:1.5rem; margin:15px 0;">Final Score: <strong>${score}/20</strong></p>
-        ${wrongItems.length > 0 ? `
-          <div style="text-align:left; background:#fff; padding:15px; border-radius:15px; margin-top:15px;">
-            <h4 style="color:#f5576c;">Words to review:</h4>
-            <ul style="padding-left:20px;">
-              ${wrongItems.map(w => `<li><strong>${w.q}</strong> (You typed: <span style="text-decoration:line-through; color:#888;">${w.user || '[empty]'}</span>)</li>`).join('')}
-            </ul>
-          </div>` : '<p style="color:#28a745; font-weight:bold;">Perfect score! You are an animal expert!</p>'}
-        <button onclick="location.reload()" style="margin-top:20px;">Try Again</button>
-      </div>`;
-  }
-
-  // Init
-  updateFlashcard();
-  renderTable();
-</script>]]></content><author><name></name></author><category term="Vocabulary" /><category term="animals" /><category term="wildlife" /><category term="ielts-speaking" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 animal-related words and phrases for IELTS Speaking Band 7.0+ with interactive tools.]]></summary></entry><entry><title type="html">Chào mừng bạn</title><link href="http://localhost:4000/learn-with-ms-thuy/general/chao-mung-ban/" rel="alternate" type="text/html" title="Chào mừng bạn" /><published>2025-04-20T00:00:00+07:00</published><updated>2025-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/general/chao-mung-ban</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/general/chao-mung-ban/"><![CDATA[<style>
-  .welcome-quote {
-    font-size: 1.3rem;
-    font-style: italic;
-    text-align: center;
-    background: #fef0f5;
-    padding: 1.5rem;
-    border-radius: 32px;
-    margin: 2rem 0;
-    color: #a18cd1;
-    border-left: 5px solid #f5576c;
-  }
-  .heart-icon {
-    color: #f5576c;
-  }
-</style>
-
-<h1 id="-chào-mừng-bạn-đến-với-learning-english-with-ms-thuy">🌟 Chào mừng bạn đến với Learning English with Ms. Thuy</h1>
-
-<p>Bạn có biết? <strong>Học tiếng Anh không phải là một hành trình khô khan, mà là một chuyến phiêu lưu thú vị.</strong> Và tại đây, cô Thuy sẽ cùng bạn bước qua từng chặng đường, từ những bỡ ngỡ đầu tiên đến sự tự tin bản lĩnh.</p>
-
-<p><img src="https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Học tập vui vẻ" style="width: 100%; max-width: 500px; display: block; margin: 1.5rem auto; border-radius: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" /></p>
-
-<h2 id="-điều-gì-đang-chờ-đón-bạn">✨ Điều gì đang chờ đón bạn?</h2>
-
-<ul>
-  <li>📚 <strong>Từ vựng sống động</strong> qua flashcard, quiz, và câu chuyện thực tế.</li>
-  <li>📝 <strong>Ngữ pháp dễ hiểu</strong> – không còn nỗi sợ thì, câu điều kiện.</li>
-  <li>🎧 <strong>Listening chủ động</strong> – luyện nghe sâu, phản xạ nhanh.</li>
-  <li>📖 <strong>Reading hấp dẫn</strong> – bài đọc theo sở thích, giải thích chi tiết.</li>
-  <li>✍️ <strong>Writing tự tin</strong> – từ câu cơ bản đến bài luận.</li>
-  <li>🗣️ <strong>Speaking lưu loát</strong> – shadowing, hội thoại thực tế.</li>
-</ul>
-
-<p>Tất cả được trình bày <strong>hiện đại, nhẹ nhàng, đầy màu sắc</strong> – bởi cô Thuy tin rằng một không gian học tập đẹp sẽ nuôi dưỡng cảm hứng.</p>
-
-<p><img src="https://images.pexels.com/photos/5428832/pexels-photo-5428832.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Học cùng bạn bè" style="width: 100%; max-width: 500px; display: block; margin: 1.5rem auto; border-radius: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" /></p>
-
-<h2 id="-lời-nhắn-từ-ms-thuy">💬 Lời nhắn từ Ms. Thuy</h2>
-
-<blockquote>
-  <p><em>“Mỗi người đều có tốc độ học riêng. Đừng so sánh mình với bất kỳ ai. Hãy bắt đầu từ nơi bạn đang đứng, dùng những công cụ đúng đắn, và kiên trì mỗi ngày. Cô ở đây để đồng hành cùng bạn – không chỉ dạy tiếng Anh, mà còn truyền cảm hứng.”</em></p>
-</blockquote>
-
-<div class="welcome-quote">
-  ❝ Học tiếng Anh là mở ra cánh cửa mới. Hãy bước qua nó với niềm vui. ❞
-</div>
-
-<h2 id="-bắt-đầu-ngay-hôm-nay">🚀 Bắt đầu ngay hôm nay</h2>
-
-<p>Bạn không cần phải giỏi để bắt đầu, nhưng bạn cần bắt đầu để trở nên giỏi. Hãy chọn một mục bạn yêu thích: <strong>Vocabulary, Grammar, Listening, Reading, Writing, hay Speaking</strong> – và khám phá bài học đầu tiên.</p>
-
-<p>Chúc bạn có những giờ phút học tập thật vui và ý nghĩa! 🌈</p>
-
-<p><em>Ms. Thuy – Người bạn đồng hành trên hành trình chinh phục tiếng Anh của bạn.</em></p>]]></content><author><name></name></author><category term="General" /><category term="welcome" /><category term="introduction" /><category term="motivation" /><summary type="html"><![CDATA[Hành trình chinh phục tiếng Anh của bạn bắt đầu từ đây – với sự đồng hành của Ms. Thuy, đầy yêu thương và phương pháp đúng đắn.]]></summary></entry><entry><title type="html">🌿 Listening Lesson: Gardening Vocabulary in Action</title><link href="http://localhost:4000/learn-with-ms-thuy/listening/listening/" rel="alternate" type="text/html" title="🌿 Listening Lesson: Gardening Vocabulary in Action" /><published>2025-04-20T00:00:00+07:00</published><updated>2025-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/listening/listening</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/listening/listening/"><![CDATA[<style>
+</script>]]></content><author><name></name></author><category term="Vocabulary" /><category term="flowers" /><category term="ielts-speaking" /><category term="vocabulary" /><category term="interactive" /><summary type="html"><![CDATA[Master 20 sophisticated flower-related words and idioms for IELTS Speaking Band 7.0+ with our interactive tools.]]></summary></entry><entry><title type="html">🌿 Listening Lesson: Gardening Vocabulary in Action</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/listening/listening/" rel="alternate" type="text/html" title="🌿 Listening Lesson: Gardening Vocabulary in Action" /><published>2025-04-20T00:00:00+07:00</published><updated>2025-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/listening/listening</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/listening/listening/"><![CDATA[<style>
   /* ========== GLOBAL PASTEL STYLES ========== */
   .listening-container {
     max-width: 1000px;
@@ -1899,7 +3325,7 @@
     <li><strong>Update transcript:</strong> Replace the content inside <code>&lt;div id="transcriptDiv"&gt;</code> with your own transcript text.</li>
     <li><strong>Colors &amp; styling:</strong> Adjust the gradient values in the <code>&lt;style&gt;</code> section (search for <code>linear-gradient</code>).</li>
   </ul>
-</details>]]></content><author><name></name></author><category term="Listening" /><category term="listening" /><category term="gardening" /><category term="audio" /><category term="quiz" /><summary type="html"><![CDATA[Practice listening with a real-life story about gardening. Learn vocabulary, take a quiz, and check your answers with a pie chart.]]></summary></entry><entry><title type="html">Shopping Vocabulary: Flashcards &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/vocabulary/shopping-vocabulary/" rel="alternate" type="text/html" title="Shopping Vocabulary: Flashcards &amp;amp; Quiz" /><published>2025-04-20T00:00:00+07:00</published><updated>2025-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/vocabulary/shopping-vocabulary</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/vocabulary/shopping-vocabulary/"><![CDATA[<style>
+</details>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Listening" /><category term="listening" /><category term="gardening" /><category term="audio" /><category term="quiz" /><summary type="html"><![CDATA[Practice listening with a real-life story about gardening. Learn vocabulary, take a quiz, and check your answers with a pie chart.]]></summary></entry><entry><title type="html">Shopping Vocabulary: Flashcards &amp;amp; Quiz</title><link href="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/shopping-vocabulary/" rel="alternate" type="text/html" title="Shopping Vocabulary: Flashcards &amp;amp; Quiz" /><published>2025-04-20T00:00:00+07:00</published><updated>2025-04-20T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/shopping-vocabulary</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/learn-with-ms-thuy/vocabulary/shopping-vocabulary/"><![CDATA[<style>
   /* ---------- FLASHCARD STYLES ---------- */
   .flashcard-section {
     max-width: 800px;
@@ -2456,168 +3882,4 @@
   }
 
   renderQuiz();
-</script>]]></content><author><name></name></author><category term="Vocabulary" /><category term="shopping" /><category term="flashcards" /><category term="quiz" /><category term="interactive" /><summary type="html"><![CDATA[Học từ vựng chủ đề Mua sắm qua flashcard lật và kiểm tra lại với quiz. Có phát âm tự động, ví dụ chi tiết.]]></summary></entry><entry><title type="html">Cách rèn luyện kỹ năng nghe tiếng Anh hiệu quả</title><link href="http://localhost:4000/learn-with-ms-thuy/listening/cach-luyen-nghe-tieng-anh-hieu-qua/" rel="alternate" type="text/html" title="Cách rèn luyện kỹ năng nghe tiếng Anh hiệu quả" /><published>2025-04-19T00:00:00+07:00</published><updated>2025-04-19T00:00:00+07:00</updated><id>http://localhost:4000/learn-with-ms-thuy/listening/cach-luyen-nghe-tieng-anh-hieu-qua</id><content type="html" xml:base="http://localhost:4000/learn-with-ms-thuy/listening/cach-luyen-nghe-tieng-anh-hieu-qua/"><![CDATA[<style>
-  /* Tạo khoảng cách cực lớn giữa các phần (h2) – không dùng gạch ngang */
-  .post-content h2 {
-    margin-top: 5rem !important;
-    margin-bottom: 1.2rem !important;
-    padding-top: 1rem;
-  }
-  .post-content h2:first-of-type {
-    margin-top: 0 !important;
-  }
-  /* Ảnh minh họa dưới mỗi tip */
-  .tip-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 1.8rem auto;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-  .post-content p, .post-content ul, .post-content ol, .post-content table, .post-content blockquote {
-    margin-bottom: 1.2rem;
-  }
-</style>
-
-<h1 id="-cách-rèn-luyện-kỹ-năng-nghe-tiếng-anh-hiệu-quả">🎧 Cách rèn luyện kỹ năng nghe tiếng Anh hiệu quả</h1>
-
-<p>Bạn có bao giờ cảm thấy <strong>nản lòng</strong> vì nghe mãi không hiểu, dù đã xem rất nhiều phim hay nghe podcast? Đừng lo, điều đó hoàn toàn bình thường. Quan trọng là bạn phải <strong>nghe đúng cách</strong>.</p>
-
-<p>Bài viết này sẽ chỉ cho bạn <strong>5 chiến lược nghe chủ động</strong> – đơn giản, dễ làm và đã được kiểm chứng qua hàng nghìn học viên của Ms. Thuy.</p>
-
-<p><img src="https://pointroadgroup.com/wp-content/uploads/2020/10/Untitled-design-8.png" alt="Các bước luyện nghe chủ động" style="width: 100%; max-width: 600px; display: block; margin: 1.5rem auto; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);" /></p>
-
-<p><em>Hình 1: Vòng tròn 4 bước luyện nghe chủ động – từ nắm ý chính đến nhại lại (shadowing).</em></p>
-
-<h2 id="-1-nghe-chủ-động--bí-quyết-vàng">📌 1. Nghe chủ động – bí quyết vàng</h2>
-
-<p>Nhiều người nghĩ rằng chỉ cần <strong>bật nhạc hoặc podcast khi làm việc nhà</strong> là đủ. Đó là <strong>nghe thụ động</strong> – giúp bạn quen với âm điệu nhưng không cải thiện khả năng hiểu sâu.</p>
-
-<p><strong>Nghe chủ động</strong> yêu cầu bạn:</p>
-
-<ul>
-  <li>🎯 <strong>Tập trung 100%</strong> vào âm thanh (không làm việc khác)</li>
-  <li>✍️ <strong>Ghi chú</strong> từ mới, cấu trúc lạ</li>
-  <li>🔄 <strong>Tóm tắt</strong> lại nội dung sau mỗi lần nghe (bằng tiếng Anh hoặc tiếng Việt)</li>
-</ul>
-
-<blockquote>
-  <p>💡 <strong>Thử thách nhỏ:</strong> Hôm nay, hãy chọn một video ngắn (1-2 phút) và nghe với tư thế ngồi bàn, không làm gì khác. Sau đó viết ra 3 ý chính. Bạn sẽ bất ngờ vì hiệu quả!</p>
-</blockquote>
-
-<p><img class="tip-image" src="https://images.pexels.com/photos/3755755/pexels-photo-3755755.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Nghe chủ động với tai nghe" /></p>
-
-<h2 id="-2-chọn-nội-dung-phù-hợp-với-trình-độ">🎯 2. Chọn nội dung phù hợp với trình độ</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Trình độ</th>
-      <th>Nguồn đề xuất</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Beginner</strong></td>
-      <td>BBC 6 Minute English, ESL Lab (Easy), EnglishClass101</td>
-    </tr>
-    <tr>
-      <td><strong>Intermediate</strong></td>
-      <td>TED Talks (có phụ đề), VOA Learning English, Spotlight English</td>
-    </tr>
-    <tr>
-      <td><strong>Advanced</strong></td>
-      <td>Podcast gốc: <em>Stuff You Should Know</em>, <em>This American Life</em>, CNN 10</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>✅ <strong>Mẹo nhỏ:</strong> Hãy chọn chủ đề bạn <strong>thực sự yêu thích</strong> (ẩm thực, du lịch, công nghệ, tâm lý). Khi có hứng thú, bạn sẽ quên đi mình đang “học” và tiếp thu nhanh hơn rất nhiều.</p>
-
-<p><img class="tip-image" src="https://images.pexels.com/photos/4144226/pexels-photo-4144226.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Chọn podcast phù hợp" /></p>
-
-<h2 id="-3-phương-pháp-nghe-sâu--lặp-lại-có-chủ-đích">🔁 3. Phương pháp “nghe sâu” – lặp lại có chủ đích</h2>
-
-<p>Thay vì nghe 100 bài khác nhau trong một tuần, hãy <strong>chỉ nghe một bài ngắn (1-2 phút) nhưng lặp lại nhiều lần</strong> theo quy trình sau:</p>
-
-<ol>
-  <li>🎧 <strong>Lần 1 – Nghe lấy ý chính:</strong> Không ghi chép, chỉ cố gắng trả lời: <em>“Bài này nói về cái gì?”</em></li>
-  <li>📝 <strong>Lần 2 – Ghi chép từ khóa:</strong> Dừng lại sau mỗi câu, viết ra 1-2 từ quan trọng.</li>
-  <li>🗣️ <strong>Lần 3 – Nhại lại (shadowing):</strong> Nghe và nói theo ngay sau khi người bản xứ vừa dứt câu. Luyện cả phát âm và ngữ điệu.</li>
-  <li>📖 <strong>Lần 4 – Nghe và tự kể lại:</strong> Không nhìn phụ đề, tắt âm thanh và tự kể lại nội dung bằng lời của bạn.</li>
-</ol>
-
-<blockquote>
-  <p>🔥 <strong>Kết quả sau 2 tuần</strong> áp dụng phương pháp này với 1 bài/ngày: Bạn sẽ thấy khả năng nghe cải thiện rõ rệt, phản xạ nhanh hơn và tự tin hơn khi giao tiếp.</p>
-</blockquote>
-
-<p><img class="tip-image" src="https://images.pexels.com/photos/4473687/pexels-photo-4473687.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Lặp lại có chủ đích" /></p>
-
-<h2 id="-4-tận-dụng-phụ-đề-thông-minh">📺 4. Tận dụng phụ đề thông minh</h2>
-
-<p>Phụ đề là <strong>công cụ hỗ trợ</strong>, không phải “nạng”. Hãy dùng chúng một cách chiến lược:</p>
-
-<ul>
-  <li>🟢 <strong>Giai đoạn 1:</strong> Phụ đề <strong>song ngữ</strong> Anh – Việt (dùng extension Language Reactor trên Netflix/YouTube).</li>
-  <li>🟡 <strong>Giai đoạn 2:</strong> Phụ đề <strong>tiếng Anh</strong> – vừa nghe vừa đọc.</li>
-  <li>🔴 <strong>Giai đoạn 3:</strong> <strong>Không phụ đề</strong> – thử thách bản thân.</li>
-</ul>
-
-<p>✅ <strong>Ứng dụng hữu ích:</strong></p>
-<ul>
-  <li>YouTube (bật phụ đề tự động, có thể điều chỉnh tốc độ 0.75x hoặc 0.9x nếu cần)</li>
-  <li>Netflix + Language Reactor</li>
-  <li>Podcasts với transcript (ví dụ: <em>6 Minute English</em> có cả audio và transcript)</li>
-</ul>
-
-<p><img class="tip-image" src="https://images.pexels.com/photos/2108810/pexels-photo-2108810.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Phụ đề thông minh trên YouTube" /></p>
-
-<h2 id="-5-luyện-nghe-mọi-lúc-mọi-nơi--nhưng-có-kế-hoạch">⏰ 5. Luyện nghe mọi lúc mọi nơi – nhưng có kế hoạch</h2>
-
-<p>Biến việc nghe tiếng Anh thành <strong>thói quen hàng ngày</strong>:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Thời điểm</th>
-      <th>Hoạt động gợi ý</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🌅 Sáng (5 phút)</td>
-      <td>Nghe một tin tức ngắn trên <em>VOA News</em> hoặc <em>BBC Minute</em></td>
-    </tr>
-    <tr>
-      <td>🚌 Trên xe buýt/metro (15 phút)</td>
-      <td>Podcast <em>6 Minute English</em> hoặc <em>The English We Speak</em></td>
-    </tr>
-    <tr>
-      <td>🍽️ Trong bữa trưa (10 phút)</td>
-      <td>Xem một clip TED-Ed có phụ đề Anh</td>
-    </tr>
-    <tr>
-      <td>🌙 Trước khi ngủ (10 phút)</td>
-      <td>Nghe một câu chuyện nhẹ nhàng trên <em>Spotify</em> (kênh <em>Sleepy Stories</em>)</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Chỉ cần 15-20 phút mỗi ngày, sau 3 tháng bạn sẽ thấy sự khác biệt rõ rệt.</strong></p>
-
-<p><img class="tip-image" src="https://images.pexels.com/photos/4065613/pexels-photo-4065613.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Luyện nghe mọi lúc mọi nơi" /></p>
-
-<h2 id="-bài-tập-thực-hành-ngay-hôm-nay">✅ Bài tập thực hành ngay hôm nay</h2>
-
-<ol>
-  <li>🎬 Chọn một video <strong>TED Talk dưới 5 phút</strong> (gợi ý: <em>“The power of listening”</em> hoặc <em>“How to speak so that people want to listen”</em>).</li>
-  <li>🔁 Áp dụng <strong>4 bước nghe sâu</strong> ở mục 3.</li>
-  <li>📝 Viết lại 3 câu bạn tâm đắc nhất vào sổ tay.</li>
-  <li>📢 Đăng ký kênh YouTube học tiếng Anh chất lượng cao: <em>English with Lucy</em>, <em>Rachel’s English</em>, hoặc <em>mmmEnglish</em>.</li>
-</ol>
-
-<p>💬 <strong>Bạn có thắc mắc hay muốn chia sẻ phương pháp luyện nghe của riêng mình?</strong> Hãy để lại bình luận bên dưới – Ms. Thuy sẽ trả lời bạn trong vòng 24 giờ!</p>
-
-<p><em>Bài viết được biên soạn bởi <strong>Ms. Thuy</strong> – người sáng lập phương pháp “Học tiếng Anh tự nhiên, vui vẻ”. Nếu bạn thấy hữu ích, hãy chia sẻ bài viết đến bạn bè nhé!</em> 🌟</p>]]></content><author><name></name></author><category term="Listening" /><category term="listening" /><category term="tips" /><category term="practice" /><category term="active listening" /><summary type="html"><![CDATA[Hướng dẫn chi tiết cách luyện nghe tiếng Anh hiệu quả: nghe chủ động, chọn đúng nội dung, nghe sâu, dùng phụ đề thông minh và thực hành mọi lúc mọi nơi. Kèm bài tập thực hành cụ thể.]]></summary></entry></feed>
+</script>]]></content><author><name></name></author><category term="learn-with-ms-thuy" /><category term="Vocabulary" /><category term="shopping" /><category term="flashcards" /><category term="quiz" /><category term="interactive" /><summary type="html"><![CDATA[Học từ vựng chủ đề Mua sắm qua flashcard lật và kiểm tra lại với quiz. Có phát âm tự động, ví dụ chi tiết.]]></summary></entry></feed>

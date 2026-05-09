@@ -2,7 +2,8 @@
 layout: post
 title: "🌿 Listening Lesson: Gardening Vocabulary in Action"
 date: 2025-04-20
-categories: Listening
+categories: 
+- IELTS Listening
 tags: [listening, gardening, audio, quiz]
 featured_image: "https://images.pexels.com/photos/1264247/pexels-photo-1264247.jpeg"
 excerpt: "Practice listening with a real-life story about gardening. Learn vocabulary, take a quiz, and check your answers with a pie chart."

@@ -2,7 +2,9 @@
 layout: post
 title: "Cách rèn luyện kỹ năng nghe tiếng Anh hiệu quả"
 date: 2025-04-19
-categories: Listening
+categories: 
+- IELTS Listening
+
 tags: [listening, tips, practice, active listening]
 featured_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqBt4t0dnQtXgj6kq_NIQyhs4QNhY3QYUO-g&s"
 excerpt: "Bạn nghe mãi không tiến bộ? Khám phá 5 phương pháp luyện nghe tiếng Anh chủ động, dễ áp dụng, giúp cải thiện nhanh chỉ sau 30 ngày."

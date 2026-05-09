@@ -1,12 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="{{ site.description }}">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  
+  <!-- Lazy Loading -->
+  <script>
+    if ('loading' in HTMLImageElement.prototype) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      images.forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+    }
+  </script>
+  
+  {% seo %}
+</head>
 <body>
-  {% include header.html %}
-  <main>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="{{ '/' | relative_url }}" class="logo">
+        <i class="fas fa-chalkboard-teacher"></i> Learn with Ms. Thúy
+      </a>
+      
+      <button class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item">
+          <a href="{{ '/vocabulary/' | relative_url }}" class="nav-link">
+            <i class="fas fa-book-open"></i> Vocabulary
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/grammar/' | relative_url }}" class="nav-link">
+            <i class="fas fa-spell-check"></i> Grammar
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ '/test/' | relative_url }}" class="nav-link">
+            <i class="fas fa-tasks"></i> Test
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" id="ielts-dropdown">
+            <i class="fas fa-language"></i> IELTS <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ '/ielts/listening/' | relative_url }}"><i class="fas fa-headphones"></i> Listening</a>
+            <a href="{{ '/ielts/reading/' | relative_url }}"><i class="fas fa-eye"></i> Reading</a>
+            <a href="{{ '/ielts/writing/' | relative_url }}"><i class="fas fa-pen-fancy"></i> Writing</a>
+            <a href="{{ '/ielts/speaking/' | relative_url }}"><i class="fas fa-comments"></i> Speaking</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" id="chinese-dropdown">
+            <i class="fas fa-language"></i> Chinese <i class="fas fa-chevron-down"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="{{ '/chinese/hsk1/' | relative_url }}">HSK 1</a>
+            <a href="{{ '/chinese/hsk2/' | relative_url }}">HSK 2</a>
+            <a href="{{ '/chinese/hsk3/' | relative_url }}">HSK 3</a>
+            <a href="{{ '/chinese/hsk4/' | relative_url }}">HSK 4</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main class="page-transition">
     {{ content }}
   </main>
-  {% include footer.html %}
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  
+  <!-- Footer -->
+  <footer style="background: var(--dark); color: var(--white); padding: 3rem 2rem; margin-top: 4rem;">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2024 Learn with Ms. Thúy. Empowering English learners worldwide.</p>
+      <div style="margin-top: 1rem;">
+        <a href="#" style="color: var(--white); margin: 0 0.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="#" style="color: var(--white); margin: 0 0.5rem;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color: var(--white); margin: 0 0.5rem;"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // Mobile dropdowns
+    const ieltsDropdown = document.getElementById('ielts-dropdown');
+    const chineseDropdown = document.getElementById('chinese-dropdown');
+    
+    if (window.innerWidth <= 768) {
+      ieltsDropdown.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = ieltsDropdown.closest('.nav-item');
+        parent.classList.toggle('active');
+      });
+      
+      chineseDropdown.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = chineseDropdown.closest('.nav-item');
+        parent.classList.toggle('active');
+      });
+    }
+    
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+    
+    // Add reveal class to sections
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('reveal');
+    });
+  </script>
 </body>
 </html>
