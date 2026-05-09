@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{% if page.featured_image %}
+  <meta property="og:image" content="{{ page.featured_image | absolute_url }}" />
+  <meta name="twitter:image" content="{{ page.featured_image | absolute_url }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+{% else %}
+  <!-- Nếu bài viết không có featured_image, dùng ảnh mặc định (đã khai báo trong head.html) -->
+{% endif %}
+<style>
+  .post-wrapper {
+    max-width: 1200px;   /* Tăng từ 820px lên 1200px để nội dung rộng hơn */
+    margin: 0 auto;
+    padding: 2rem 2rem;  /* Tăng padding ngang 1 chút cho thoáng, nhưng vẫn rộng hơn trước */
+  }
+  @media (max-width: 768px) {
+    .post-wrapper { 
+      padding: 1.5rem 1.2rem; 
+    }
+  }
+  .post-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+  }
+  .post-wrapper h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .post-content {
+    font-size: 1.05rem;
+    line-height: 2;
+  }
+  .post-content h2 {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    border-left: 4px solid #f5576c;
+    padding-left: 0.75rem;
+  }
+  .post-content blockquote {
+    background: #f9f3ff;
+    border-left: 4px solid #a18cd1;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+  }
+  .post-content table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+</style>
+
+<div class="post-wrapper">
+  <div class="post-header">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      <span>📅 {{ page.date | date: "%B %d, %Y" }}</span>
+      <span>📂 Category: <a href="{{ site.baseurl }}/{{ page.categories | first | downcase }}.html">{{ page.categories | first }}</a></span>
+      <span>🏷️ Tags: {{ page.tags | join: ", " }}</span>
+    </div>
+    {% if page.featured_image %}
+      <img src="{{ page.featured_image }}" alt="{{ page.title }}" style="width: 100%; max-width: 100%; border-radius: 16px; margin-bottom: 1rem;">
+    {% endif %}
+  </div>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <a href="{{ '/' | relative_url }}">🌟 Ms. Thuy</a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        {% assign current = page.url | relative_url %}
+        <li><a href="{{ '/' | relative_url }}" {% if current == '/' or current == '/index.html' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ '/vocabulary/' | relative_url }}" {% if current contains '/vocabulary/' %}class="active"{% endif %}>Vocabulary</a></li>
+        <li><a href="{{ '/grammar/' | relative_url }}" {% if current contains '/grammar/' %}class="active"{% endif %}>Grammar</a></li>
+        <li><a href="{{ '/listening/' | relative_url }}" {% if current contains '/listening/' %}class="active"{% endif %}>Listening</a></li>
+        <li><a href="{{ '/reading/' | relative_url }}" {% if current contains '/reading/' %}class="active"{% endif %}>Reading</a></li>
+        <li><a href="{{ '/writing/' | relative_url }}" {% if current contains '/writing/' %}class="active"{% endif %}>Writing</a></li>
+        <li><a href="{{ '/speaking/' | relative_url }}" {% if current contains '/speaking/' %}class="active"{% endif %}>Speaking</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+  </div>
+</header>

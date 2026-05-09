@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="reveal">Learn English with Ms. Thúy 🇻🇳</h1>
+    <p class="reveal">Fun, effective, and engaging English lessons designed specifically for Vietnamese learners. Master English with confidence!</p>
+    <div class="reveal">
+      <a href="#featured-categories" class="btn-sm" style="background: white; color: #667eea; font-size: 1.1rem; padding: 1rem 2rem;">
+        Start Learning <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics Section -->
+<section style="padding: 4rem 2rem; background: white;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+      <div class="reveal">
+        <i class="fas fa-book" style="font-size: 2.5rem; background: var(--primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+        <h3 style="font-size: 2rem; margin: 1rem 0;">500+</h3>
+        <p>Lessons & Exercises</p>
+      </div>
+      <div class="reveal">
+        <i class="fas fa-users" style="font-size: 2.5rem; background: var(--primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+        <h3 style="font-size: 2rem; margin: 1rem 0;">10,000+</h3>
+        <p>Happy Students</p>
+      </div>
+      <div class="reveal">
+        <i class="fas fa-trophy" style="font-size: 2.5rem; background: var(--primary); -webkit-background-clip: text; background-clip: text; color: transparent;"></i>
+        <h3 style="font-size: 2rem; margin: 1rem 0;">98%</h3>
+        <p>Success Rate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Categories Section -->
+<section id="featured-categories" class="categories-section reveal">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Explore Topics</h2>
+    <p style="text-align: center; color: #5a5a6e; margin-bottom: 3rem;">Choose your learning path and start mastering English today</p>
+    
+    <div class="categories-grid">
+      {% assign categories = "Vocabulary,Grammar,Listening,Reading,Writing,Speaking" | split: "," %}
+      {% for cat in categories %}
+      {% assign cat_slug = cat | downcase %}
+      <a href="{{ '/' | relative_url }}{{ cat_slug }}/" class="category-card reveal">
+        <i class="fas {% case cat %}
+          {% when 'Vocabulary' %}fa-book-open
+          {% when 'Grammar' %}fa-spell-check
+          {% when 'Listening' %}fa-headphones
+          {% when 'Reading' %}fa-eye
+          {% when 'Writing' %}fa-pen-fancy
+          {% when 'Speaking' %}fa-comments
+        {% endcase %}"></i>
+        <h3>{{ cat }}</h3>
+        <p>Improve your {{ cat_slug }} skills with easy lessons and interactive exercises.</p>
+        <span style="display: inline-block; margin-top: 1rem; color: #667eea;">Explore →</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts Preview -->
+<section id="latest-posts" class="latest-section reveal" style="padding: 4rem 2rem; background: white;">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Latest from the Blog</h2>
+    <p style="text-align: center; color: #5a5a6e; margin-bottom: 3rem;">Fresh content added weekly to help you progress</p>
+    
+    <div class="posts-grid">
+      {% assign latest_posts = site.posts | limit: 6 %}
+      {% for post in latest_posts %}
+      <div class="post-card reveal">
+        {% if post.featured_image %}
+          <img src="{{ post.featured_image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        {% else %}
+          <div style="height: 220px; background: linear-gradient(135deg, #667eea15, #764ba215); display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-newspaper" style="font-size: 4rem; color: #667eea; opacity: 0.5;"></i>
+          </div>
+        {% endif %}
+        <div class="card-content">
+          <span class="post-category">{{ post.categories | first }}</span>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-date">{{ post.date | date: "%b %d, %Y" }}</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+          <a href="{{ post.url | relative_url }}" class="btn-sm">Read more →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="#featured-categories" class="btn-sm" style="background: transparent; border: 2px solid #667eea; color: #667eea;">
+        View All Categories <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Section -->
+<section style="padding: 4rem 2rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+  <div class="container" style="text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Stay Updated!</h2>
+    <p style="margin-bottom: 2rem;">Get weekly learning tips and new lesson updates directly to your inbox</p>
+    <form style="display: flex; max-width: 500px; margin: 0 auto; gap: 1rem; flex-wrap: wrap;">
+      <input type="email" placeholder="Your email address" style="flex: 1; padding: 1rem; border: none; border-radius: 50px; outline: none;">
+      <button type="submit" style="padding: 1rem 2rem; background: white; color: #667eea; border: none; border-radius: 50px; cursor: pointer; font-weight: bold;">
+        Subscribe <i class="fas fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+</section>
